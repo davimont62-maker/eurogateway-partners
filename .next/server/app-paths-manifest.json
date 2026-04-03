@@ -1,0 +1,10 @@
+{
+  "/page": "app/page.js",
+  "/exhibition-representation/page": "app/exhibition-representation/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/eu-commercial-representation/page": "app/eu-commercial-representation/page.js",
+  "/services/page": "app/services/page.js",
+  "/eu-contact-point/page": "app/eu-contact-point/page.js",
+  "/compliance-documentation-support/page": "app/compliance-documentation-support/page.js",
+  "/about/page": "app/about/page.js"
+}
