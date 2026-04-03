@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "About",
   description:
-    "Learn about EuroGateway Partners and how we help non-EU manufacturers establish a trusted commercial presence in Europe.",
+    "Learn about EuroLinq and how we help non-EU manufacturers establish a trusted commercial presence in Europe.",
   path: "/about"
 });
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="A practical partner for manufacturers entering Europe."
-        description="EuroGateway Partners was created to help overseas manufacturers build trust, improve responsiveness, and navigate the practical realities of European market access."
+        description="EuroLinq was created to help overseas manufacturers build trust, improve responsiveness, and navigate the practical realities of European market access."
       />
 
       <section className="section-space">
@@ -38,10 +38,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="card-surface p-8">
+          <div className="overflow-hidden rounded-3xl border border-line/70 bg-[linear-gradient(160deg,rgba(16,40,70,0.97),rgba(29,76,152,0.88))] p-8 text-white shadow-glow">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Our positioning</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink">Your European Market Access Partner</h2>
-            <p className="mt-4 text-base leading-7 text-slate">
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">Your European Market Access Partner</h2>
+            <p className="mt-4 text-base leading-7 text-white/75">
               Helping global manufacturers establish a trusted commercial presence in Europe.
             </p>
           </div>

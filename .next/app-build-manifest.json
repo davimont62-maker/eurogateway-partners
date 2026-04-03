@@ -40,11 +40,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/eu-contact-point/page.js"
-    ],
-    "/compliance-documentation-support/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/compliance-documentation-support/page.js"
     ]
   }
 }

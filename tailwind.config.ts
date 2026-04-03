@@ -9,16 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#122033",
-        slate: "#4c5b70",
-        line: "#d7deea",
+        ink: "#0f1b2d",
+        slate: "#51627d",
+        line: "#d7dfec",
         mist: "#f3f6fb",
-        accent: "#234f9d",
-        accentSoft: "#e8eef9",
+        accent: "#1d4c98",
+        accentSoft: "#edf3fc",
+        gold: "#b68b3c",
+        goldSoft: "#f4ebd7",
+        panel: "#102846",
         success: "#2f6b52"
       },
       boxShadow: {
-        soft: "0 20px 50px rgba(18, 32, 51, 0.08)"
+        soft: "0 22px 60px rgba(15, 27, 45, 0.08)",
+        glow: "0 20px 80px rgba(29, 76, 152, 0.18)"
       },
       borderRadius: {
         xl2: "1.5rem"

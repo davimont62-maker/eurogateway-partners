@@ -7,7 +7,7 @@ import { companyDetails } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Contact",
   description:
-    "Contact EuroGateway Partners to discuss European market access support for your manufacturing business.",
+    "Contact EuroLinq to discuss European market access support for your manufacturing business.",
   path: "/contact"
 });
 
@@ -62,7 +62,7 @@ export default function ContactPage() {
         title="Prefer to start with a short introductory conversation?"
         description="We can discuss your products, your target markets, and the level of local European support that would be most useful at your current stage."
         primaryLabel="Email us directly"
-        primaryHref="mailto:enquiries@eurogatewaypartners.com"
+        primaryHref="mailto:enquiries@eurolinq-solutions.com"
         secondaryLabel="Review services"
       />
     </>

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://www.eurogatewaypartners.com/sitemap.xml"
+    sitemap: "https://www.eurolinq-solutions.com/sitemap.xml"
   };
 }

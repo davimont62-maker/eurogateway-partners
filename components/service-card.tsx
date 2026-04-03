@@ -4,8 +4,8 @@ import type { ServiceItem } from "@/lib/site";
 
 export function ServiceCard({ service }: { service: ServiceItem }) {
   return (
-    <article className="card-surface flex h-full flex-col p-7">
-      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accentSoft text-accent">
+    <article className="card-surface flex h-full flex-col bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(237,243,252,0.72))] p-7">
+      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/20 bg-[linear-gradient(135deg,rgba(237,243,252,1),rgba(244,235,215,0.88))] text-accent">
         <ServiceIcon name={service.icon} className="h-6 w-6" />
       </div>
       <h3 className="text-2xl font-semibold tracking-tight text-ink">{service.title}</h3>

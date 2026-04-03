@@ -7,7 +7,7 @@ import { services } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Services",
   description:
-    "Explore EuroGateway Partners' European market access services for non-EU manufacturers, including representation, contact-point, logistics, and compliance coordination support.",
+    "Explore EuroLinq's European market access services for non-EU manufacturers, including representation, contact-point, logistics, and compliance coordination support.",
   path: "/services"
 });
 

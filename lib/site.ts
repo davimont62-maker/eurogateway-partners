@@ -10,14 +10,15 @@ export type ServiceItem = {
 };
 
 export const companyDetails = {
-  name: "EuroGateway Partners",
+  name: "EuroLinq",
   tagline: "Your European Market Access Partner",
   description:
     "Helping global manufacturers establish a trusted commercial presence in Europe.",
-  email: "enquiries@eurogatewaypartners.com",
+  email: "enquiries@eurolinq-solutions.com",
   phone: "+44 (0)20 7123 4567",
   companyNumber: "Company No. 14876543",
-  registeredOffice: "125 Kingsway, London WC2B 6NH, United Kingdom"
+  registeredOffice: "125 Kingsway, London WC2B 6NH, United Kingdom",
+  domain: "www.eurolinq-solutions.com"
 };
 
 export const mainNavigation = [
@@ -213,9 +214,9 @@ export const faqs = [
 ];
 
 export const homeStats = [
-  { value: "UK-based", label: "commercial presence for European-facing coordination" },
-  { value: "6 core services", label: "covering market entry, representation, and operations" },
-  { value: "Cross-border", label: "support for communication between Europe and overseas head offices" }
+  { value: "UK-based", label: "presence designed for credible European-facing coordination" },
+  { value: "6 service pillars", label: "covering representation, sales support, and operations" },
+  { value: "Cross-border", label: "execution support between Europe and overseas head offices" }
 ];
 
 export function getServiceBySlug(slug: string) {

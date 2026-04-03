@@ -20,7 +20,7 @@ const manrope = Manrope({
 export const metadata: Metadata = buildMetadata({
   title: companyDetails.name,
   description:
-    "EuroGateway Partners helps non-EU manufacturers establish a trusted commercial presence in Europe through representation, coordination, and market-entry support."
+    "EuroLinq helps non-EU manufacturers establish a trusted commercial presence in Europe through representation, coordination, and market-entry support."
 });
 
 export default function RootLayout({
