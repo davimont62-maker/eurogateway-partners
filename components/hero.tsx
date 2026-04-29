@@ -7,7 +7,7 @@ export function Hero() {
       <div className="container-shell relative grid gap-12 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:py-28">
         <div className="pointer-events-none absolute left-[-80px] top-12 h-56 w-56 rounded-full bg-accent/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-10 right-[-40px] h-48 w-48 rounded-full bg-gold/20 blur-3xl" />
-        <div className="space-y-8">
+        <div className="space-y-10">
           <div className="inline-flex rounded-full border border-gold/25 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             UK-based representation for overseas manufacturers
           </div>
@@ -27,12 +27,20 @@ export function Hero() {
               Explore services
             </Link>
           </div>
-          <div className="grid gap-4 pt-2 sm:grid-cols-3">
+          <div className="grid gap-4 pt-3 sm:grid-cols-3">
             {credibilityStrip.map((item) => (
               <div key={item} className="rounded-3xl border border-line/70 bg-white/70 px-5 py-4 shadow-soft">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate">{item}</p>
               </div>
             ))}
+          </div>
+          <div className="rounded-[2rem] border border-line/70 bg-white/72 p-6 shadow-soft">
+            <p className="eyebrow">How Eurolinq fits</p>
+            <p className="mt-3 max-w-2xl text-lg leading-8 text-slate">
+              We support clients as a European extension of their own team, with the level of
+              involvement shaped by commercial targets, internal capacity, and intended pace of
+              investment.
+            </p>
           </div>
         </div>
 

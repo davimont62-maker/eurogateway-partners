@@ -110,7 +110,7 @@ export const services: ServiceItem[] = [
     excerpt:
       "A practical European commercial interface for counterparties that expect local credibility, continuity, and structured communication.",
     intro:
-      "European buyers and commercial partners often look for a recognisable regional presence before moving into serious discussion. EuroLinq acts as a local extension of the client company, helping create that presence in a way aligned with the client’s goals and level of investment.",
+      "European buyers and commercial partners often look for a recognisable regional presence before moving into serious discussion. EuroLinq acts as a local extension of the client company, helping create that presence in a way aligned with the client's goals and level of investment.",
     included: [
       "European-facing commercial representation where appropriate",
       "Structured communication with distributors, retailers, and counterparties",
@@ -123,9 +123,9 @@ export const services: ServiceItem[] = [
       "Businesses wanting a staged market-entry model rather than immediate full establishment"
     ],
     howItWorks: [
-      "We assess the client’s target channels, countries, and commercial expectations",
+      "We assess the client's target channels, countries, and commercial expectations",
       "We define the appropriate representation model and communication role",
-      "We support local interaction in a way that complements the client’s own team"
+      "We support local interaction in a way that complements the client's own team"
     ],
     ctaTitle: "Discuss commercial representation in Europe"
   },
@@ -166,7 +166,7 @@ export const services: ServiceItem[] = [
       "Distributor and retailer communication support",
       "Lead handling and first-response support",
       "Structured follow-up around developing opportunities",
-      "Coordination between local activity and the client’s own team"
+      "Coordination between local activity and the client's own team"
     ],
     forWho: [
       "Manufacturers testing the European market",
@@ -199,7 +199,7 @@ export const services: ServiceItem[] = [
       "Companies that require a trusted local intermediary role"
     ],
     howItWorks: [
-      "We review the operational requirements linked to the client’s market-entry model",
+      "We review the operational requirements linked to the client's market-entry model",
       "We define where local coordination adds value and reduces friction",
       "We support communication and continuity across relevant operational partners"
     ],
@@ -236,7 +236,7 @@ export const processSteps = [
   {
     step: "01",
     title: "Understand your target market and goals",
-    text: "We begin with the client’s commercial objectives, target countries, route-to-market priorities, and intended level of investment."
+    text: "We begin with the client's commercial objectives, target countries, route-to-market priorities, and intended level of investment."
   },
   {
     step: "02",
@@ -260,7 +260,7 @@ export const trustNarrative = {
   paragraphs: [
     "For many manufacturers, European market entry is not only about finding buyers. It requires a structured local presence, a credible commercial interface, and practical coordination across multiple parties and workstreams.",
     "EuroLinq acts as a gateway, a communication interface, and a commercial bridge. We help clients establish an appropriate European presence without forcing a one-size-fits-all setup.",
-    "Our role is designed to align with the client’s own investment approach, market priorities, and pace of development."
+    "Our role is designed to align with the client's own investment approach, market priorities, and pace of development."
   ],
   points: [
     "Local European presence",
