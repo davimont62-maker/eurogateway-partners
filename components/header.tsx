@@ -44,15 +44,15 @@ export function Header() {
           </button>
         </div>
 
-        <div className="mt-4 hidden items-center justify-between gap-6 lg:flex">
-          <span className="inline-flex rounded-full border border-gold/30 bg-goldSoft px-5 py-2.5 text-sm font-semibold text-gold">
+        <div className="mt-4 hidden items-center justify-between gap-5 xl:gap-6 lg:flex">
+          <span className="inline-flex rounded-full border border-gold/30 bg-goldSoft px-4 py-2.5 text-sm font-semibold text-gold xl:px-5">
             {companyDetails.tagline}
           </span>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 xl:gap-4">
             <nav
               aria-label="Primary"
-              className="flex items-center gap-2 rounded-full border border-line/80 bg-white/88 px-3 py-2 shadow-soft"
+              className="flex items-center gap-1.5 rounded-full border border-line/80 bg-white/88 px-3 py-2 shadow-soft xl:gap-2"
             >
               {mainNavigation.map((item) => {
                 const isActive = pathname === item.href;
@@ -61,7 +61,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`rounded-full px-4 py-2 text-base font-semibold transition ${
+                    className={`rounded-full px-3.5 py-2 text-[0.96rem] font-semibold transition xl:px-4 xl:text-base ${
                       isActive
                         ? "bg-accentSoft text-ink"
                         : "text-slate hover:bg-accentSoft hover:text-ink"
@@ -73,7 +73,7 @@ export function Header() {
               })}
             </nav>
 
-            <Link href="/contact" className="button-primary px-7 py-3.5 text-base lg:min-w-[170px]">
+            <Link href="/contact" className="button-primary px-6 py-3.5 text-base lg:min-w-[160px] xl:px-7 xl:min-w-[170px]">
               Speak with us
             </Link>
           </div>

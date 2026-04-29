@@ -9,8 +9,8 @@ type LogoProps = {
 
 export function Logo({ href = "/", dark = false, className = "" }: LogoProps) {
   const wrapperClass = dark
-    ? "rounded-[1.75rem] border border-white/10 bg-white px-4 py-3 shadow-soft"
-    : "rounded-[1.4rem] border border-line/70 bg-white/98 px-3 py-2 shadow-soft";
+    ? "rounded-[1.9rem] border border-white/10 bg-white px-4 py-3 shadow-soft"
+    : "rounded-[1.55rem] border border-line/70 bg-white/98 px-4 py-2.5 shadow-soft";
 
   return (
     <Link href={href} className={`inline-flex items-center ${className}`}>
@@ -21,7 +21,7 @@ export function Logo({ href = "/", dark = false, className = "" }: LogoProps) {
           width={780}
           height={250}
           priority
-          className={dark ? "h-auto w-[260px]" : "h-auto w-[228px] sm:w-[268px]"}
+          className={dark ? "h-auto w-[300px]" : "h-auto w-[260px] sm:w-[320px]"}
         />
       </span>
     </Link>
