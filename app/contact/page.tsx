@@ -7,7 +7,7 @@ import { companyDetails } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Contact",
   description:
-    "Contact EuroLinq to discuss European market access support for your manufacturing business.",
+    "Contact Eurolinq to discuss a structured European market access and representation model for your business.",
   path: "/contact"
 });
 
@@ -16,16 +16,16 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Talk to us about your European market-entry plans."
-        description="If you need a practical UK and European-facing partner to support commercial representation, contact-point services, or cross-border coordination, we would be pleased to hear from you."
+        title="Speak with us about your European market entry."
+        description="If you are considering how much local representation, communication support, or operational coordination your business requires in Europe, we would be pleased to discuss it."
       />
 
       <section className="section-space">
-        <div className="container-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="space-y-6">
+        <div className="container-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="space-y-8">
             <div className="card-surface p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Direct details</p>
-              <div className="mt-5 space-y-3 text-base leading-7 text-slate">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Direct contact</p>
+              <div className="mt-5 space-y-3 text-base leading-8 text-slate">
                 <p>
                   <span className="font-semibold text-ink">Email:</span> {companyDetails.email}
                 </p>
@@ -44,12 +44,12 @@ export default function ContactPage() {
             </div>
 
             <div className="card-surface p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Typical enquiries</p>
-              <ul className="mt-5 space-y-3 text-base leading-7 text-slate">
-                <li>European exhibition support for new market entrants</li>
-                <li>Commercial representation for UK and EU buyers</li>
-                <li>Contact-point and service address arrangements</li>
-                <li>Sales, logistics, and documentation coordination</li>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Typical discussions</p>
+              <ul className="mt-5 space-y-3 text-base leading-8 text-slate">
+                <li>European representation without a full setup</li>
+                <li>Defining an appropriate support model</li>
+                <li>Supporting exhibitions, distributors, or buyers</li>
+                <li>Creating a stronger local European interface</li>
               </ul>
             </div>
           </div>
@@ -59,11 +59,11 @@ export default function ContactPage() {
       </section>
 
       <CTASection
-        title="Prefer to start with a short introductory conversation?"
-        description="We can discuss your products, your target markets, and the level of local European support that would be most useful at your current stage."
+        title="If you prefer, start with a short introductory conversation"
+        description="We can discuss your target market, the stage you are at, and what level of European support would be most appropriate."
         primaryLabel="Email us directly"
         primaryHref="mailto:enquiries@eurolinq-solutions.com"
-        secondaryLabel="Review services"
+        secondaryLabel="Explore services"
       />
     </>
   );

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { ArrowRightIcon } from "@/components/icons";
-import { companyDetails, homeStats } from "@/lib/site";
+import { companyDetails, credibilityStrip, servicePillars } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -14,35 +13,26 @@ export function Hero() {
           </div>
           <div className="space-y-6">
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-6xl">
-              Build a more credible, responsive European presence with EuroLinq.
+              {companyDetails.tagline}
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-slate">
-              We help overseas manufacturers, especially Chinese companies, establish a trusted
-              commercial front office, strengthen buyer confidence, and coordinate the practical
-              work required to enter Europe with clarity.
+              Eurolinq helps non-EU manufacturers establish a credible commercial presence in Europe through local representation, coordination, and structured support shaped around the client&apos;s market goals and investment approach.
             </p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link href="/contact" className="button-primary">
-              Arrange an introduction call
+              Discuss your EU market entry
             </Link>
             <Link href="/services" className="button-secondary">
-              Explore our services
+              Explore services
             </Link>
           </div>
           <div className="grid gap-4 pt-2 sm:grid-cols-3">
-            <div className="rounded-3xl border border-line/70 bg-white/70 px-5 py-4 shadow-soft">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate">Representation</p>
-              <p className="mt-2 text-sm leading-6 text-ink">European-facing contact, enquiry handling, and commercial continuity.</p>
-            </div>
-            <div className="rounded-3xl border border-line/70 bg-white/70 px-5 py-4 shadow-soft">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate">Coordination</p>
-              <p className="mt-2 text-sm leading-6 text-ink">Support across buyers, exhibitions, logistics partners, and documentation.</p>
-            </div>
-            <div className="rounded-3xl border border-line/70 bg-white/70 px-5 py-4 shadow-soft">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate">Credibility</p>
-              <p className="mt-2 text-sm leading-6 text-ink">A more established and trustworthy market presence for Europe.</p>
-            </div>
+            {credibilityStrip.map((item) => (
+              <div key={item} className="rounded-3xl border border-line/70 bg-white/70 px-5 py-4 shadow-soft">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -56,11 +46,11 @@ export function Hero() {
               <p className="max-w-lg text-base leading-7 text-white/70">{companyDetails.description}</p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-              {homeStats.map((item) => (
-                <div key={item.value} className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                  <p className="text-2xl font-semibold tracking-tight text-white">{item.value}</p>
-                  <p className="mt-2 text-sm leading-6 text-white/65">{item.label}</p>
+            <div className="space-y-5">
+              {servicePillars.map((pillar) => (
+                <div key={pillar.title} className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <p className="text-lg font-semibold tracking-tight text-white">{pillar.title}</p>
+                  <p className="mt-3 text-sm leading-7 text-white/68">{pillar.description}</p>
                 </div>
               ))}
             </div>
@@ -68,13 +58,8 @@ export function Hero() {
             <div className="rounded-3xl border border-gold/25 bg-white/5 p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-goldSoft">Why clients engage us</p>
               <p className="mt-3 text-lg font-medium leading-8 text-white/85">
-                A European-facing brand presence, faster lead handling, and practical coordination
-                across exhibitions, buyers, logistics partners, and documentation workstreams.
+                A European-facing presence, clearer local communication, and practical continuity across commercial and operational workstreams.
               </p>
-              <Link href="/about" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-goldSoft hover:text-white">
-                Learn how we support overseas manufacturers
-                <ArrowRightIcon className="h-4 w-4" />
-              </Link>
             </div>
           </div>
         </div>

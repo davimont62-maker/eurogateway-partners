@@ -12,10 +12,6 @@ html {
 
 body {
   @apply bg-white text-ink antialiased;
-  background-image:
-    radial-gradient(circle at top left, rgba(29, 76, 152, 0.12), transparent 26%),
-    radial-gradient(circle at 85% 12%, rgba(182, 139, 60, 0.14), transparent 22%),
-    linear-gradient(to bottom, #f8fbff, #eef3fa 40%, #f8fafc 100%);
 }
 
 h1,
@@ -40,25 +36,25 @@ select {
 }
 
 .section-space {
-  @apply py-16 md:py-20 lg:py-24;
+  @apply py-16 md:py-24;
+}
+
+.eyebrow {
+  @apply text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-slate;
 }
 
 .card-surface {
-  @apply rounded-3xl border border-line/80 bg-white/90 shadow-soft backdrop-blur;
+  @apply border border-line/80 bg-white;
 }
 
 .button-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-ink to-accent px-6 py-3 text-sm font-semibold text-white shadow-glow hover:from-accent hover:to-panel;
+  @apply inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-accent;
 }
 
 .button-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-line bg-white/90 px-6 py-3 text-sm font-semibold text-ink hover:border-accent hover:bg-accentSoft;
+  @apply inline-flex items-center justify-center rounded-full border border-line bg-white px-6 py-3 text-sm font-semibold text-ink hover:border-ink;
 }
 
 .prose-copy p {
-  @apply text-base leading-7 text-slate;
-}
-
-.section-tint {
-  @apply border-y border-line/70 bg-gradient-to-br from-white via-accentSoft/30 to-goldSoft/40;
+  @apply text-base leading-8 text-slate;
 }

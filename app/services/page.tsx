@@ -1,13 +1,14 @@
+import Link from "next/link";
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
-import { ServiceCard } from "@/components/service-card";
+import { ServicePillarsSection } from "@/components/service-pillars-section";
 import { buildMetadata } from "@/lib/metadata";
 import { services } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Services",
   description:
-    "Explore EuroLinq's European market access services for non-EU manufacturers, including representation, contact-point, logistics, and compliance coordination support.",
+    "Explore Eurolinq's structured European market access support across representation, sales coordination, and operational continuity.",
   path: "/services"
 });
 
@@ -16,22 +17,40 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="A joined-up service offer for European market access."
-        description="Our services are designed to help non-EU manufacturers appear more established, respond more effectively, and coordinate practical commercial activity across Europe."
+        title="Structured European support, organised around three core pillars."
+        description="Eurolinq does not present a disconnected set of standalone offers. Our services are designed to work together as part of a broader European market-entry and development model."
       />
 
+      <ServicePillarsSection />
+
       <section className="section-space">
-        <div className="container-shell grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
-          ))}
+        <div className="container-shell">
+          <div className="max-w-3xl">
+            <p className="eyebrow">Detailed services</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-ink sm:text-4xl">
+              Service detail pages
+            </h2>
+          </div>
+          <div className="mt-12 space-y-8">
+            {services.map((service) => (
+              <article
+                key={service.slug}
+                className="grid gap-6 border-t border-line pt-6 lg:grid-cols-[0.8fr_1.2fr_auto]"
+              >
+                <h3 className="text-2xl font-semibold tracking-[-0.04em] text-ink">{service.title}</h3>
+                <p className="text-base leading-8 text-slate">{service.excerpt}</p>
+                <Link href={`/${service.slug}`} className="text-sm font-semibold text-ink hover:text-accent">
+                  Learn more
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <CTASection
-        title="Need help deciding which combination of services is right for your business?"
-        description="We can help you define an appropriate support model based on your stage of market entry, target channels, and internal resourcing."
-        primaryLabel="Discuss service options"
+        title="Discuss which combination of services fits your European strategy"
+        description="The right support model depends on your target market, internal resources, and intended pace of investment."
       />
     </>
   );

@@ -4,16 +4,24 @@ export type ServiceItem = {
   shortTitle?: string;
   excerpt: string;
   intro: string;
+  included: string[];
+  forWho: string[];
+  howItWorks: string[];
+  ctaTitle: string;
+};
+
+export type ServicePillar = {
+  title: string;
+  description: string;
   bullets: string[];
-  outcomes: string[];
-  icon: "events" | "representation" | "contact" | "sales" | "logistics" | "compliance";
+  href: string;
 };
 
 export const companyDetails = {
   name: "EuroLinq",
   tagline: "Your European Market Access Partner",
   description:
-    "Helping global manufacturers establish a trusted commercial presence in Europe.",
+    "UK-based market access advisory and representation support for non-EU manufacturers developing business in Europe.",
   email: "enquiries@eurolinq-solutions.com",
   phone: "+44 (0)20 7123 4567",
   companyNumber: "Company No. 14876543",
@@ -28,195 +36,252 @@ export const mainNavigation = [
   { href: "/contact", label: "Contact" }
 ];
 
+export const credibilityStrip = [
+  "UK-based representation",
+  "European commercial interface",
+  "Scalable support model"
+];
+
+export const servicePillars: ServicePillar[] = [
+  {
+    title: "Market Entry & Representation",
+    description:
+      "Support for manufacturers that need a credible first European presence before or alongside direct market development.",
+    bullets: [
+      "Exhibition support and organiser liaison",
+      "EU commercial representation",
+      "EU contact point and service address"
+    ],
+    href: "/services"
+  },
+  {
+    title: "Sales & Distribution Support",
+    description:
+      "Structured support around distributor communication, lead handling, and practical market coordination.",
+    bullets: [
+      "Distributor communication support",
+      "Lead handling and first-response support",
+      "Sales and market-entry coordination"
+    ],
+    href: "/sales-distribution-support"
+  },
+  {
+    title: "Operations, Compliance & Coordination",
+    description:
+      "A practical European extension for operational follow-through, documentation organisation, and partner coordination.",
+    bullets: [
+      "Logistics and warehouse coordination",
+      "Service address and returns support",
+      "Documentation and compliance coordination"
+    ],
+    href: "/logistics-operational-coordination"
+  }
+];
+
 export const services: ServiceItem[] = [
   {
     slug: "exhibition-representation",
     title: "Exhibition Representation",
     excerpt:
-      "Support for trade fairs, organiser liaison, exhibitor administration, and a credible on-the-ground European presence.",
+      "Professional support around European exhibitions, organiser liaison, exhibitor administration, and follow-up coordination.",
     intro:
-      "For many overseas manufacturers, exhibitions are the first serious commercial step into Europe. We help ensure that opportunity is handled professionally, from booking discussions through to exhibitor coordination and lead follow-up.",
-    bullets: [
+      "For many non-EU manufacturers, exhibitions are the first visible step into Europe. EuroLinq helps ensure that this step is handled in a credible and structured way, with local coordination before, during, and after the event.",
+    included: [
       "Exhibition booking support and organiser liaison",
-      "Review of exhibitor terms, practical requirements, and local coordination",
-      "Representation support before, during, and after events",
-      "Lead handling, first-response support, and post-event follow-up planning",
-      "European-facing communication with visitors, buyers, and organisers"
+      "Coordination of exhibitor administration and practical requirements",
+      "European-facing communication with organisers and relevant contacts",
+      "Lead handling and post-event follow-up support"
     ],
-    outcomes: [
-      "A more credible first market impression",
-      "Reduced friction when dealing with exhibition organisers",
-      "Better conversion of event interest into structured follow-up"
+    forWho: [
+      "Manufacturers exhibiting in Europe for the first time",
+      "Businesses that need local follow-up after a trade fair",
+      "Companies seeking a more professional European-facing presence around events"
     ],
-    icon: "events"
+    howItWorks: [
+      "We review the exhibition objective, commercial context, and expected follow-up process",
+      "We define the level of local representation and communication support required",
+      "We support coordination before the event and help maintain structure afterwards"
+    ],
+    ctaTitle: "Discuss exhibition support in Europe"
   },
   {
     slug: "eu-commercial-representation",
     title: "EU Commercial Representation",
     excerpt:
-      "A professional European commercial front office to help build trust with distributors, retailers, and counterparties.",
+      "A practical European commercial interface for counterparties that expect local credibility, continuity, and structured communication.",
     intro:
-      "European buyers often expect a recognisable regional presence before entering serious discussions. We provide practical commercial representation that helps overseas manufacturers establish credibility while they build their longer-term structure.",
-    bullets: [
-      "Acting as a UK or EU contracting entity where appropriate and agreed",
-      "Commercial contact support for distributors, retailers, and procurement teams",
-      "Assistance with enquiry handling and initial qualification",
-      "European-facing presentation across email, documents, and customer communication",
-      "Coordination between head office and European opportunities"
+      "European buyers and commercial partners often look for a recognisable regional presence before moving into serious discussion. EuroLinq acts as a local extension of the client company, helping create that presence in a way aligned with the client’s goals and level of investment.",
+    included: [
+      "European-facing commercial representation where appropriate",
+      "Structured communication with distributors, retailers, and counterparties",
+      "Support for enquiry handling and first-response continuity",
+      "A more established European-facing commercial presentation"
     ],
-    outcomes: [
-      "Improved trust in early-stage commercial discussions",
-      "Clearer communication between overseas teams and European buyers",
-      "A stronger foundation for structured market entry"
+    forWho: [
+      "Manufacturers entering Europe without a full local setup",
+      "Companies needing a credible regional commercial interface",
+      "Businesses wanting a staged market-entry model rather than immediate full establishment"
     ],
-    icon: "representation"
+    howItWorks: [
+      "We assess the client’s target channels, countries, and commercial expectations",
+      "We define the appropriate representation model and communication role",
+      "We support local interaction in a way that complements the client’s own team"
+    ],
+    ctaTitle: "Discuss commercial representation in Europe"
   },
   {
     slug: "eu-contact-point",
     title: "EU Contact Point / Service Address",
     shortTitle: "EU Contact Point",
     excerpt:
-      "A dependable European phone, email, and service address presence for day-to-day communications and practical support.",
+      "A dependable European point of contact for communication, front-office support, and service address requirements.",
     intro:
-      "A local point of contact can materially improve responsiveness and confidence, especially during the early stages of European market establishment. We provide a front office layer that helps businesses appear accessible and organised.",
-    bullets: [
-      "Dedicated European phone and email contact point",
-      "Front office handling for incoming enquiries and routine correspondence",
-      "Service address support where appropriate",
-      "Returns and service address coordination",
-      "Clear escalation paths back to the manufacturer"
+      "A local contact layer can materially improve confidence and responsiveness. EuroLinq provides a European-facing interface for enquiries, routine communication, and service address support where appropriate.",
+    included: [
+      "European phone and email contact point",
+      "Front-office handling for relevant inbound communication",
+      "Service address support where suitable",
+      "Clear routing and escalation back to the client team"
     ],
-    outcomes: [
-      "A more local and responsive customer experience",
-      "Better handling of routine inbound communications",
-      "Reduced strain on overseas teams operating across time zones"
+    forWho: [
+      "Manufacturers needing a European-facing communication presence",
+      "Businesses that require a more accessible first contact in Europe",
+      "Companies not ready for a full legal or operational setup"
     ],
-    icon: "contact"
+    howItWorks: [
+      "We define the communication scope and expected handling process",
+      "We establish the relevant front-office and service-address arrangements",
+      "We maintain a clear bridge between local communications and the client team"
+    ],
+    ctaTitle: "Discuss EU contact point support"
   },
   {
     slug: "sales-distribution-support",
     title: "Sales & Distribution Support",
     excerpt:
-      "Practical assistance with distributor conversations, lead progression, and market-entry coordination across Europe.",
+      "Practical support for distributor communication, lead progression, and the day-to-day coordination that helps market entry move forward.",
     intro:
-      "Successful entry into Europe usually depends on disciplined follow-up, structured partner engagement, and consistent communication. We support the commercial process so opportunities are not lost through delay or cultural mismatch.",
-    bullets: [
+      "European market development depends not only on introductions, but on disciplined follow-up, responsive communication, and continuity across multiple parties. EuroLinq supports this process without positioning itself as a commission-led sales intermediary.",
+    included: [
       "Distributor and retailer communication support",
       "Lead handling and first-response support",
-      "Sales support for inbound opportunities and ongoing follow-up",
-      "Market-entry coordination between commercial, operational, and documentation workstreams",
-      "Localisation of website and sales presentation materials"
+      "Structured follow-up around developing opportunities",
+      "Coordination between local activity and the client’s own team"
     ],
-    outcomes: [
-      "More consistent progression of new opportunities",
-      "Better coordination between commercial and delivery teams",
-      "A more market-ready presentation for European audiences"
+    forWho: [
+      "Manufacturers testing the European market",
+      "Businesses needing structured local communication support",
+      "Companies seeking continuity without building a full local commercial team"
     ],
-    icon: "sales"
+    howItWorks: [
+      "We understand the target market, route to market, and internal client resources",
+      "We define the communication and support model around leads and counterparties",
+      "We maintain local continuity while keeping the client aligned and informed"
+    ],
+    ctaTitle: "Discuss sales and distribution support"
   },
   {
     slug: "logistics-operational-coordination",
     title: "Logistics & Operational Coordination",
     excerpt:
-      "Cross-border coordination with warehouses, service partners, and 3PL providers to support smooth European operations.",
+      "Support for practical European-side coordination with warehouses, logistics providers, service partners, and operational contacts.",
     intro:
-      "Commercial success depends on operational follow-through. We help manufacturers coordinate practical delivery requirements so that European customers experience reliability, clarity, and continuity.",
-    bullets: [
+      "A credible European market presence depends on operational reliability as much as commercial visibility. EuroLinq helps coordinate the practical work that sits between overseas teams and local European delivery requirements.",
+    included: [
       "Coordination with warehouses and third-party logistics providers",
-      "Support around shipment readiness and fulfilment communication",
-      "Returns routing and service address coordination",
-      "Operational liaison between European partners and overseas teams",
-      "Practical support for launch and scaling phases"
+      "Support around service address and returns arrangements",
+      "Operational communication with local partners where appropriate",
+      "Continuity across practical implementation workstreams"
     ],
-    outcomes: [
-      "Fewer delays caused by fragmented communication",
-      "Clearer ownership across logistics and customer-facing teams",
-      "A more dependable operating model for European customers"
+    forWho: [
+      "Manufacturers building a staged European operating model",
+      "Businesses needing support around local coordination rather than full operations outsourcing",
+      "Companies that require a trusted local intermediary role"
     ],
-    icon: "logistics"
+    howItWorks: [
+      "We review the operational requirements linked to the client’s market-entry model",
+      "We define where local coordination adds value and reduces friction",
+      "We support communication and continuity across relevant operational partners"
+    ],
+    ctaTitle: "Discuss logistics and operational coordination"
   },
   {
     slug: "compliance-documentation-support",
     title: "Compliance & Documentation Support",
     excerpt:
-      "Coordination support for market documentation, commercial paperwork, and European-facing compliance administration.",
+      "Coordination support around European-facing documentation, compliance organisation, and structured communication with specialist advisers.",
     intro:
-      "Manufacturers entering Europe often need better coordination around documentation, presentation, and local expectations. We help organise this workstream so that commercial activity is supported by the right documentation processes.",
-    bullets: [
+      "European market entry often involves a wide set of documentation and coordination requirements. EuroLinq helps organise this workstream so commercial progress is supported by clearer structure and practical continuity.",
+    included: [
       "Documentation and compliance coordination",
-      "Support preparing European-facing commercial and operational paperwork",
-      "Liaison with specialist advisers where technical input is required",
-      "Website localisation and European-facing presentation support",
-      "Practical organisation of ongoing documentation flows"
+      "Support around European-facing paperwork and presentation",
+      "Liaison with specialist advisers where required",
+      "Practical organisation of documentation-related workflows"
     ],
-    outcomes: [
-      "More confidence when engaging buyers and partners",
-      "Better internal organisation around required documentation",
-      "Smoother collaboration with legal, compliance, and operational advisers"
+    forWho: [
+      "Manufacturers preparing for European buyer and partner engagement",
+      "Companies needing better coordination rather than standalone technical advice",
+      "Businesses that want a more organised market-entry process"
     ],
-    icon: "compliance"
+    howItWorks: [
+      "We identify the documentation and coordination requirements around the market-entry plan",
+      "We support local organisation and communication across involved parties",
+      "We help maintain continuity between documentation work and commercial progress"
+    ],
+    ctaTitle: "Discuss compliance and documentation support"
   }
 ];
+
+export const processSteps = [
+  {
+    step: "01",
+    title: "Understand your target market and goals",
+    text: "We begin with the client’s commercial objectives, target countries, route-to-market priorities, and intended level of investment."
+  },
+  {
+    step: "02",
+    title: "Define the right European support model",
+    text: "We shape a practical support structure around representation, communication, coordination, and operational needs."
+  },
+  {
+    step: "03",
+    title: "Establish local presence and communication",
+    text: "We create a more credible European-facing interface for relevant counterparties, buyers, organisers, and partners."
+  },
+  {
+    step: "04",
+    title: "Support ongoing commercial and operational activity",
+    text: "We remain involved where needed to help maintain continuity, follow-up, and practical market-entry progression."
+  }
+];
+
+export const trustNarrative = {
+  title: "Europe requires more than a sales conversation.",
+  paragraphs: [
+    "For many manufacturers, European market entry is not only about finding buyers. It requires a structured local presence, a credible commercial interface, and practical coordination across multiple parties and workstreams.",
+    "EuroLinq acts as a gateway, a communication interface, and a commercial bridge. We help clients establish an appropriate European presence without forcing a one-size-fits-all setup.",
+    "Our role is designed to align with the client’s own investment approach, market priorities, and pace of development."
+  ],
+  points: [
+    "Local European presence",
+    "Practical support",
+    "Scalable involvement",
+    "Aligned with client investment"
+  ]
+};
 
 export const whoWeHelp = [
-  "Chinese manufacturers seeking a credible route into European markets",
-  "Non-EU product companies that need a practical commercial foothold before establishing a larger local entity",
-  "Businesses exhibiting in Europe for the first time and needing professional coordination support",
-  "Manufacturers that require a European contact layer for buyers, distributors, and service communications"
+  "Non-EU manufacturers entering Europe",
+  "Companies testing the market before larger investment",
+  "Exhibitors needing structured follow-up support",
+  "Businesses needing EU presence without full setup"
 ];
 
-export const whyWorkWithUs = [
-  {
-    title: "Commercially grounded",
-    description:
-      "We focus on the practical work that helps market entry progress, not abstract advisory alone."
-  },
-  {
-    title: "European-facing credibility",
-    description:
-      "We help overseas manufacturers present themselves in a way that feels established, responsive, and trustworthy to European counterparties."
-  },
-  {
-    title: "Cross-border coordination",
-    description:
-      "We bridge communication between head office, commercial contacts, service partners, and operational providers."
-  }
-];
-
-export const trustPoints = [
-  "Professional UK-based company presence",
-  "Structured communication with European buyers and organisers",
-  "Practical support across commercial, operational, and administrative workstreams",
-  "Designed for manufacturers that need execution support as well as strategic guidance"
-];
-
-export const faqs = [
-  {
-    question: "Do you replace a local subsidiary or full European team?",
-    answer:
-      "No. Our role is to help overseas manufacturers establish a practical and credible European-facing presence while they assess the scale and timing of their longer-term investment."
-  },
-  {
-    question: "Do you work only with Chinese companies?",
-    answer:
-      "No. We support non-EU manufacturers more broadly, but we are particularly well suited to Chinese manufacturers seeking a structured route into the UK and wider European market."
-  },
-  {
-    question: "Can you help with trade fairs and exhibitor communication?",
-    answer:
-      "Yes. Exhibition representation and organiser liaison are a core part of our offer, particularly where a manufacturer needs responsive local support before and after an event."
-  },
-  {
-    question: "Do you provide legal or regulated compliance advice?",
-    answer:
-      "We provide coordination support rather than specialist legal or regulated advice. Where technical or legal expertise is required, we help organise the work with the appropriate professional advisers."
-  }
-];
-
-export const homeStats = [
-  { value: "UK-based", label: "presence designed for credible European-facing coordination" },
-  { value: "6 service pillars", label: "covering representation, sales support, and operations" },
-  { value: "Cross-border", label: "execution support between Europe and overseas head offices" }
+export const aboutPoints = [
+  "A European extension of the client company",
+  "Not a commission-based sales intermediary",
+  "A support model shaped by target markets and investment approach",
+  "A practical bridge between overseas manufacturers and Europe"
 ];
 
 export function getServiceBySlug(slug: string) {

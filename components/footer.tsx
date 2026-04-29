@@ -6,15 +6,14 @@ export function Footer() {
   return (
     <footer className="mt-20 border-t border-white/10 bg-panel text-white">
       <div className="container-shell grid gap-12 py-14 lg:grid-cols-[1.3fr_0.8fr_1fr]">
-        <div className="space-y-4">
-          <Logo dark className="max-w-[240px]" />
+        <div className="space-y-5">
+          <Logo dark />
           <p className="max-w-xl text-sm leading-7 text-white/70">{companyDetails.description}</p>
-          <div className="space-y-1 text-sm text-white/65">
+          <div className="space-y-1 text-sm leading-7 text-white/65">
             <p>{companyDetails.registeredOffice}</p>
             <p>{companyDetails.companyNumber}</p>
             <p>{companyDetails.email}</p>
             <p>{companyDetails.phone}</p>
-            <p>{companyDetails.domain}</p>
           </div>
         </div>
 

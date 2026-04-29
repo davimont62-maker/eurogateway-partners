@@ -1,7 +1,7 @@
 export function ContactForm() {
   return (
     <form className="card-surface grid gap-5 p-8">
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2">
         <label className="text-sm font-medium text-ink">
           Full name
           <input
@@ -22,7 +22,7 @@ export function ContactForm() {
         </label>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2">
         <label className="text-sm font-medium text-ink">
           Email address
           <input
@@ -68,7 +68,7 @@ export function ContactForm() {
           name="message"
           rows={6}
           className="mt-2 w-full rounded-2xl border border-line px-4 py-3 text-base text-ink outline-none focus:border-accent"
-          placeholder="Tell us about your products, your current stage of market entry, and the support you need."
+          placeholder="Tell us about your products, target market, and the support you are considering."
         />
       </label>
 
@@ -77,7 +77,7 @@ export function ContactForm() {
         {/* Future backend integration can be connected here via CRM, email automation, or form handling endpoint. */}
       </div>
 
-      <button type="submit" className="button-primary w-full sm:w-auto">
+      <button type="submit" className="button-primary">
         Send enquiry
       </button>
     </form>
