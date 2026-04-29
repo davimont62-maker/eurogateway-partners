@@ -8,22 +8,46 @@ export function ServicePage({ service }: { service: ServiceItem }) {
       <PageHero eyebrow="Service" title={service.title} description={service.excerpt} />
 
       <section className="section-space">
-        <div className="container-shell grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="prose-copy space-y-6">
-            <p>{service.intro}</p>
-            <p>
-              Eurolinq provides this support as part of a broader European market-access model:
-              practical, structured, and aligned with the client&apos;s own commercial and investment
-              approach.
-            </p>
+        <div className="container-shell grid gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="space-y-8">
+            <div className="prose-copy space-y-6">
+              <p>{service.intro}</p>
+              <p>
+                Eurolinq provides this support as part of a broader European market-access model:
+                practical, structured, and aligned with the client&apos;s own commercial and
+                investment approach.
+              </p>
+            </div>
+
+            <div className="rounded-[2rem] border border-line/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,235,215,0.34))] p-7 shadow-soft">
+              <p className="eyebrow">How this fits</p>
+              <p className="mt-4 text-lg leading-8 text-slate">
+                This service is usually most effective when it forms part of a wider European
+                presence, with clear local communication and practical continuity around the
+                client&apos;s market objectives.
+              </p>
+            </div>
           </div>
 
-          <div className="space-y-8">
-            <div className="card-surface p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">What is included</p>
-              <ul className="mt-5 space-y-3 text-base leading-8 text-slate">
+          <div className="overflow-hidden rounded-[2rem] border border-line/10 bg-panel p-8 text-white shadow-glow">
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+                  What is included
+                </p>
+                <p className="mt-3 text-lg leading-8 text-white/78">
+                  The scope depends on the client&apos;s market-entry stage and the degree of local
+                  support required.
+                </p>
+              </div>
+              <ul className="grid gap-3">
                 {service.included.map((item) => (
-                  <li key={item}>- {item}</li>
+                  <li
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-base leading-7 text-white/82"
+                  >
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -35,9 +59,14 @@ export function ServicePage({ service }: { service: ServiceItem }) {
         <div className="container-shell grid gap-16 py-16 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Who it is for</p>
-            <ul className="mt-5 space-y-3 text-base leading-8 text-slate">
+            <ul className="mt-5 grid gap-4">
               {service.forWho.map((item) => (
-                <li key={item}>- {item}</li>
+                <li
+                  key={item}
+                  className="rounded-[1.75rem] border border-line/70 bg-white px-5 py-4 text-base leading-8 text-slate shadow-soft"
+                >
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -45,11 +74,17 @@ export function ServicePage({ service }: { service: ServiceItem }) {
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">How it works</p>
             <ol className="mt-5 space-y-5">
               {service.howItWorks.map((item, index) => (
-                <li key={item} className="card-surface p-6">
+                <li
+                  key={item}
+                  className="overflow-hidden rounded-[1.75rem] border border-line/70 bg-white shadow-soft"
+                >
+                  <div className="h-1.5 w-full bg-gradient-to-r from-accent via-panel to-gold" />
+                  <div className="p-6">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">
                     Step {index + 1}
                   </p>
                   <p className="mt-2 text-base leading-8 text-slate">{item}</p>
+                  </div>
                 </li>
               ))}
             </ol>
