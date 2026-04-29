@@ -23,7 +23,7 @@ export default function ContactPage() {
       <section className="section-space">
         <div className="container-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-8">
-            <div className="card-surface p-7">
+            <div className="card-surface bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,235,215,0.42))] p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Direct contact</p>
               <div className="mt-5 space-y-3 text-base leading-8 text-slate">
                 <p>
@@ -46,10 +46,10 @@ export default function ContactPage() {
             <div className="card-surface p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Typical discussions</p>
               <ul className="mt-5 space-y-3 text-base leading-8 text-slate">
-                <li>European representation without a full setup</li>
-                <li>Defining an appropriate support model</li>
-                <li>Supporting exhibitions, distributors, or buyers</li>
-                <li>Creating a stronger local European interface</li>
+                <li>- European representation without a full setup</li>
+                <li>- Defining an appropriate support model</li>
+                <li>- Supporting exhibitions, distributors, or buyers</li>
+                <li>- Creating a stronger local European interface</li>
               </ul>
             </div>
           </div>
