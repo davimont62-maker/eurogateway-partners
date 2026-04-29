@@ -11,7 +11,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/82 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/94 backdrop-blur-xl">
       <div className="container-shell py-4 lg:py-5">
         <div className="flex items-center justify-between gap-4">
           <Logo />
