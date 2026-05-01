@@ -11,9 +11,7 @@ export function Footer() {
           <p className="max-w-xl text-sm leading-7 text-white/70">{companyDetails.description}</p>
           <div className="space-y-1 text-sm leading-7 text-white/65">
             <p>{companyDetails.registeredOffice}</p>
-            <p>{companyDetails.companyNumber}</p>
             <p>{companyDetails.email}</p>
-            <p>{companyDetails.phone}</p>
           </div>
         </div>
 

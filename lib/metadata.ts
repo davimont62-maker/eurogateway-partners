@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { companyDetails } from "@/lib/site";
 
-const siteUrl = "https://www.eurolinq-solutions.com";
+const siteUrl = "https://www.eurolinq-partners.com";
 
 export function buildMetadata({
   title,

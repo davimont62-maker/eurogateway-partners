@@ -15,7 +15,7 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
-    url: `https://www.eurolinq-solutions.com${route}`,
+    url: `https://www.eurolinq-partners.com${route}`,
     lastModified: new Date("2026-04-02"),
     changeFrequency: "monthly",
     priority: route === "" ? 1 : 0.8

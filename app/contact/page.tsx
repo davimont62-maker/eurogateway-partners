@@ -30,15 +30,8 @@ export default function ContactPage() {
                   <span className="font-semibold text-ink">Email:</span> {companyDetails.email}
                 </p>
                 <p>
-                  <span className="font-semibold text-ink">Phone:</span> {companyDetails.phone}
-                </p>
-                <p>
                   <span className="font-semibold text-ink">Registered office:</span>{" "}
                   {companyDetails.registeredOffice}
-                </p>
-                <p>
-                  <span className="font-semibold text-ink">Company number:</span>{" "}
-                  {companyDetails.companyNumber}
                 </p>
               </div>
             </div>
@@ -62,7 +55,7 @@ export default function ContactPage() {
         title="If you prefer, start with a short introductory conversation"
         description="We can discuss your target market, the stage you are at, and what level of European support would be most appropriate."
         primaryLabel="Email us directly"
-        primaryHref="mailto:enquiries@eurolinq-solutions.com"
+        primaryHref="mailto:enquiries@eurolinq-partners.com"
         secondaryLabel="Explore services"
       />
     </>

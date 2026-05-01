@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/94 backdrop-blur-xl">
       <div className="container-shell py-4 lg:py-5">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 lg:gap-6">
           <Logo />
 
           <button
@@ -42,10 +42,7 @@ export function Header() {
               />
             </span>
           </button>
-        </div>
-
-        <div className="mt-4 hidden items-center justify-end gap-3 xl:gap-4 lg:flex">
-          <div className="flex items-center gap-3 xl:gap-4">
+          <div className="hidden items-center gap-3 xl:gap-4 lg:flex">
             <nav
               aria-label="Primary"
               className="flex items-center gap-1.5 rounded-full border border-line/80 bg-white/88 px-3 py-2 shadow-soft xl:gap-2"

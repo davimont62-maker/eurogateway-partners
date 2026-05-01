@@ -22,11 +22,9 @@ export const companyDetails = {
   tagline: "Your European Market Access Partner",
   description:
     "UK-based market access advisory and representation support for non-EU manufacturers developing business in Europe.",
-  email: "enquiries@eurolinq-solutions.com",
-  phone: "+44 (0)20 7123 4567",
-  companyNumber: "Company No. 14876543",
+  email: "enquiries@eurolinq-partners.com",
   registeredOffice: "42-50 Hersham Rd, Walton-on-Thames KT12 1RZ, United Kingdom",
-  domain: "www.eurolinq-solutions.com"
+  domain: "www.eurolinq-partners.com"
 };
 
 export const mainNavigation = [
@@ -52,7 +50,7 @@ export const servicePillars: ServicePillar[] = [
       "EU commercial representation",
       "EU contact point and service address"
     ],
-    href: "/services"
+    href: "/exhibition-representation"
   },
   {
     title: "Sales & Distribution Support",
