@@ -15,14 +15,14 @@ function BrandMark({ dark = false }: { dark?: boolean }) {
     <svg viewBox="0 0 106 106" aria-hidden="true" className="h-[58px] w-[58px] sm:h-[66px] sm:w-[66px]">
       <g fill="none" strokeLinecap="round" strokeLinejoin="round">
         <path
-          d="M40 27L23 44c-10 10-10 27 0 37s27 10 37 0l11-11"
+          d="M38 28L23 43c-9 9-9 24 0 33s24 9 33 0l12-12"
           stroke={navy}
-          strokeWidth="13"
+          strokeWidth="14"
         />
         <path
-          d="M66 79l17-17c10-10 10-27 0-37s-27-10-37 0L35 36"
+          d="M68 78l15-15c9-9 9-24 0-33s-24-9-33 0L38 42"
           stroke={gold}
-          strokeWidth="13"
+          strokeWidth="14"
         />
       </g>
     </svg>
