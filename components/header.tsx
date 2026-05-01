@@ -12,6 +12,8 @@ export function Header() {
   const locale = getLocaleFromPathname(pathname);
   const labels = navLabels[locale];
   const [isOpen, setIsOpen] = useState(false);
+  const englishHref = pathname?.startsWith("/zh") ? pathname.replace(/^\/zh/, "") || "/" : pathname || "/";
+  const chineseHref = englishHref === "/" ? "/zh" : `/zh${englishHref}`;
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/94 backdrop-blur-xl">
@@ -46,6 +48,24 @@ export function Header() {
             </span>
           </button>
           <div className="hidden items-center gap-3 xl:gap-4 lg:flex">
+            <div className="flex items-center rounded-full border border-line/80 bg-white/88 p-1 shadow-soft">
+              <Link
+                href={englishHref}
+                className={`rounded-full px-3 py-1.5 text-sm font-semibold transition ${
+                  locale === "en" ? "bg-accentSoft text-ink" : "text-slate hover:text-ink"
+                }`}
+              >
+                EN
+              </Link>
+              <Link
+                href={chineseHref}
+                className={`rounded-full px-3 py-1.5 text-sm font-semibold transition ${
+                  locale === "zh" ? "bg-accentSoft text-ink" : "text-slate hover:text-ink"
+                }`}
+              >
+                中文
+              </Link>
+            </div>
             <nav
               aria-label="Primary"
               className="flex items-center gap-1.5 rounded-full border border-line/80 bg-white/88 px-3 py-2 shadow-soft xl:gap-2"
@@ -92,6 +112,26 @@ export function Header() {
           }`}
         >
           <div className="rounded-[2rem] border border-line/80 bg-white/96 p-5 shadow-soft">
+            <div className="flex items-center rounded-full border border-line/80 bg-white p-1 shadow-soft">
+              <Link
+                href={englishHref}
+                onClick={() => setIsOpen(false)}
+                className={`flex-1 rounded-full px-3 py-2 text-center text-sm font-semibold transition ${
+                  locale === "en" ? "bg-accentSoft text-ink" : "text-slate hover:text-ink"
+                }`}
+              >
+                EN
+              </Link>
+              <Link
+                href={chineseHref}
+                onClick={() => setIsOpen(false)}
+                className={`flex-1 rounded-full px-3 py-2 text-center text-sm font-semibold transition ${
+                  locale === "zh" ? "bg-accentSoft text-ink" : "text-slate hover:text-ink"
+                }`}
+              >
+                中文
+              </Link>
+            </div>
             <nav aria-label="Mobile primary" className="mt-5 grid gap-2">
               {mainNavigation.map((item) => {
                 const localizedHref = localizeHref(item.href, locale);
