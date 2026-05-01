@@ -25,7 +25,7 @@ export const companyDetails = {
   email: "enquiries@eurolinq-solutions.com",
   phone: "+44 (0)20 7123 4567",
   companyNumber: "Company No. 14876543",
-  registeredOffice: "125 Kingsway, London WC2B 6NH, United Kingdom",
+  registeredOffice: "42-50 Hersham Rd, Walton-on-Thames KT12 1RZ, United Kingdom",
   domain: "www.eurolinq-solutions.com"
 };
 
