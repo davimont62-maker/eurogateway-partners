@@ -12,17 +12,15 @@ function BrandMark({ dark = false }: { dark?: boolean }) {
   const gold = "#d4a24f";
 
   return (
-    <svg viewBox="0 0 106 106" aria-hidden="true" className="h-[58px] w-[58px] sm:h-[66px] sm:w-[66px]">
-      <g fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 120 120" aria-hidden="true" className="h-[58px] w-[58px] sm:h-[66px] sm:w-[66px]">
+      <g>
         <path
-          d="M38 28L23 43c-9 9-9 24 0 33s24 9 33 0l12-12"
-          stroke={navy}
-          strokeWidth="14"
+          d="M34 43L58 19c8-8 19-12 30-12 11 0 22 4 30 12l1 1-17 17-1-1c-8-8-21-8-29 0L48 60c-8 8-8 21 0 29l1 1-17 17-1-1c-8-8-12-19-12-30s4-22 12-30l3-3z"
+          fill={navy}
         />
         <path
-          d="M68 78l15-15c9-9 9-24 0-33s-24-9-33 0L38 42"
-          stroke={gold}
-          strokeWidth="14"
+          d="M86 77L62 101c-8 8-19 12-30 12s-22-4-30-12l-1-1 17-17 1 1c8 8 21 8 29 0l24-24c8-8 8-21 0-29l-1-1 17-17 1 1c8 8 12 19 12 30s-4 22-12 30l-3 3z"
+          fill={gold}
         />
       </g>
     </svg>
