@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Logo } from "@/components/logo";
-import { companyDetails, mainNavigation } from "@/lib/site";
+import { mainNavigation } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -44,11 +44,7 @@ export function Header() {
           </button>
         </div>
 
-        <div className="mt-4 hidden items-center justify-between gap-5 xl:gap-6 lg:flex">
-          <span className="inline-flex rounded-full border border-gold/30 bg-goldSoft px-4 py-2.5 text-sm font-semibold text-gold xl:px-5">
-            {companyDetails.tagline}
-          </span>
-
+        <div className="mt-4 hidden items-center justify-end gap-3 xl:gap-4 lg:flex">
           <div className="flex items-center gap-3 xl:gap-4">
             <nav
               aria-label="Primary"
@@ -86,9 +82,6 @@ export function Header() {
           }`}
         >
           <div className="rounded-[2rem] border border-line/80 bg-white/96 p-5 shadow-soft">
-            <div className="rounded-2xl border border-gold/30 bg-goldSoft px-4 py-3 text-sm font-semibold text-gold">
-              {companyDetails.tagline}
-            </div>
             <nav aria-label="Mobile primary" className="mt-5 grid gap-2">
               {mainNavigation.map((item) => {
                 const isActive = pathname === item.href;
