@@ -50,7 +50,7 @@ export const servicePillars: ServicePillar[] = [
       "EU commercial representation",
       "EU contact point and service address"
     ],
-    href: "/exhibition-representation"
+    href: "/market-entry-representation"
   },
   {
     title: "Sales & Distribution Support",
