@@ -1,16 +1,23 @@
 import { SectionTitle } from "@/components/section-title";
 import { processSteps } from "@/lib/site";
 
-export function ProcessSection() {
+type ProcessSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  steps?: typeof processSteps;
+};
+
+export function ProcessSection({
+  eyebrow = "How we work",
+  title = "A staged support model shaped around the client's market goals.",
+  steps = processSteps
+}: ProcessSectionProps = {}) {
   return (
     <section className="section-space">
       <div className="container-shell">
-        <SectionTitle
-          eyebrow="How we work"
-          title="A staged support model shaped around the client's market goals."
-        />
+        <SectionTitle eyebrow={eyebrow} title={title} />
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          {processSteps.map((item) => (
+          {steps.map((item) => (
             <article key={item.step} className="overflow-hidden rounded-3xl border border-line/70 bg-white shadow-soft">
               <div className="h-1.5 w-full bg-gradient-to-r from-accent via-panel to-gold" />
               <div className="p-7">

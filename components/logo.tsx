@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { companyDetails } from "@/lib/site";
+import { taglines, type Locale } from "@/lib/i18n";
 
 type LogoProps = {
   href?: string;
   dark?: boolean;
   className?: string;
+  locale?: Locale;
 };
 
-export function Logo({ href = "/", dark = false, className = "" }: LogoProps) {
+export function Logo({ href = "/", dark = false, className = "", locale = "en" }: LogoProps) {
   const titleClass = dark ? "text-white" : "text-ink";
   const strapClass = dark ? "text-white/62" : "text-slate";
   const markWrapClass = dark
@@ -35,7 +36,7 @@ export function Logo({ href = "/", dark = false, className = "" }: LogoProps) {
         <span
           className={`mt-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.28em] sm:text-[0.68rem] ${strapClass}`}
         >
-          {companyDetails.tagline}
+          {taglines[locale]}
         </span>
       </span>
     </Link>

@@ -2,16 +2,27 @@ import type { MetadataRoute } from "next";
 
 const routes = [
   "",
+  "/zh",
   "/about",
+  "/zh/about",
   "/services",
+  "/zh/services",
   "/market-entry-representation",
+  "/zh/market-entry-representation",
   "/exhibition-representation",
+  "/zh/exhibition-representation",
   "/eu-commercial-representation",
+  "/zh/eu-commercial-representation",
   "/eu-contact-point",
+  "/zh/eu-contact-point",
   "/sales-distribution-support",
+  "/zh/sales-distribution-support",
   "/logistics-operational-coordination",
+  "/zh/logistics-operational-coordination",
   "/compliance-documentation-support",
-  "/contact"
+  "/zh/compliance-documentation-support",
+  "/contact",
+  "/zh/contact"
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

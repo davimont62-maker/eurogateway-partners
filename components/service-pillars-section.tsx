@@ -2,17 +2,31 @@ import Link from "next/link";
 import { SectionTitle } from "@/components/section-title";
 import { servicePillars } from "@/lib/site";
 
-export function ServicePillarsSection() {
+type ServicePillarsSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  pillars?: typeof servicePillars;
+  learnMoreLabel?: string;
+};
+
+export function ServicePillarsSection({
+  eyebrow = "Services",
+  title = "A structured support model built around market entry, representation, and practical coordination.",
+  description = "Rather than presenting six disconnected offers, Eurolinq's work is organised around three complementary pillars.",
+  pillars = servicePillars,
+  learnMoreLabel = "Learn more"
+}: ServicePillarsSectionProps = {}) {
   return (
     <section className="section-space section-tint relative overflow-hidden">
       <div className="container-shell">
         <SectionTitle
-          eyebrow="Services"
-          title="A structured support model built around market entry, representation, and practical coordination."
-          description="Rather than presenting six disconnected offers, Eurolinq's work is organised around three complementary pillars."
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
         />
         <div className="mt-14 space-y-8">
-          {servicePillars.map((pillar, index) => (
+          {pillars.map((pillar, index) => (
             <article
               key={pillar.title}
               className="grid gap-8 rounded-[2rem] border border-line/70 bg-white/88 p-8 shadow-soft lg:grid-cols-[0.9fr_1.1fr]"
@@ -34,7 +48,7 @@ export function ServicePillarsSection() {
                   ))}
                 </ul>
                 <Link href={pillar.href} className="mt-6 inline-flex text-sm font-semibold text-ink hover:text-accent">
-                  Learn more
+                  {learnMoreLabel}
                 </Link>
               </div>
             </article>

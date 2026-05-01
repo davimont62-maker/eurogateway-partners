@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 type CTASectionProps = {
+  eyebrow?: string;
   title: string;
   description: string;
   primaryLabel?: string;
@@ -10,6 +11,7 @@ type CTASectionProps = {
 };
 
 export function CTASection({
+  eyebrow = "Next step",
   title,
   description,
   primaryLabel = "Contact us",
@@ -23,7 +25,7 @@ export function CTASection({
         <div className="card-surface bg-[linear-gradient(135deg,#102846,#153766_60%,#1d4c98)] px-8 py-10 text-white shadow-glow lg:px-12 lg:py-14">
           <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">Next step</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">{eyebrow}</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
               <p className="mt-4 max-w-3xl text-lg leading-8 text-white/75">{description}</p>
             </div>
