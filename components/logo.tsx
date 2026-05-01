@@ -16,7 +16,7 @@ export function Logo({ href = "/", dark = false, className = "" }: LogoProps) {
     : "";
 
   return (
-    <Link href={href} className={`inline-flex items-center gap-2.5 sm:gap-3 ${className}`}>
+    <Link href={href} className={`inline-flex items-center gap-1.5 sm:gap-2 ${className}`}>
       <span className={markWrapClass}>
         <Image
           src="/eurolinq-mark.png"
