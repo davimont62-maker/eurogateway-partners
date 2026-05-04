@@ -3,8 +3,10 @@ import { Hero } from "@/components/hero";
 import { ProcessSection } from "@/components/process-section";
 import { SectionTitle } from "@/components/section-title";
 import { ServicePillarsSection } from "@/components/service-pillars-section";
+import { StructuredData } from "@/components/structured-data";
 import { TrustSection } from "@/components/trust-section";
 import { buildMetadata } from "@/lib/metadata";
+import { buildProfessionalServiceSchema } from "@/lib/schema";
 import {
   companyDescriptionZh,
   credibilityStripZh,
@@ -27,6 +29,14 @@ export const metadata = buildMetadata({
 export default function ChineseHomePage() {
   return (
     <>
+      <StructuredData
+        id="zh-home-professional-service-schema"
+        data={buildProfessionalServiceSchema({
+          locale: "zh",
+          path: "/zh",
+          description: companyDescriptionZh
+        })}
+      />
       <Hero
         eyebrow={heroZh.eyebrow}
         title={heroZh.title}

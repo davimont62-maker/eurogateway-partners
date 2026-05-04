@@ -1,9 +1,13 @@
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
+import { StructuredData } from "@/components/structured-data";
+import { buildBreadcrumbSchema, buildServiceSchema, buildWebPageSchema } from "@/lib/schema";
 import type { ServiceItem } from "@/lib/site";
 
 type ServicePageProps = {
   service: ServiceItem;
+  locale?: "en" | "zh";
+  path?: string;
   eyebrow?: string;
   fitEyebrow?: string;
   fitText?: string;
@@ -21,6 +25,8 @@ type ServicePageProps = {
 
 export function ServicePage({
   service,
+  locale = "en",
+  path,
   eyebrow = "Service",
   fitEyebrow = "How this fits",
   fitText = "This service is usually most effective when it forms part of a wider European presence, with clear local communication and practical continuity around the client's market objectives.",
@@ -35,8 +41,35 @@ export function ServicePage({
   secondaryLabel = "View all services",
   secondaryHref = "/services"
 }: ServicePageProps) {
+  const servicePath = path ?? `/${service.slug}`;
+  const serviceListPath = locale === "zh" ? "/zh/services" : "/services";
+  const homePath = locale === "zh" ? "/zh" : "/";
+  const homeLabel = locale === "zh" ? "首页" : "Home";
+  const servicesLabel = locale === "zh" ? "服务" : "Services";
+
   return (
     <>
+      <StructuredData
+        id={`service-schema-${service.slug}-${locale}`}
+        data={[
+          buildWebPageSchema({
+            locale,
+            path: servicePath,
+            title: service.title,
+            description: service.excerpt
+          }),
+          buildServiceSchema({
+            service,
+            locale,
+            path: servicePath
+          }),
+          buildBreadcrumbSchema([
+            { name: homeLabel, path: homePath },
+            { name: servicesLabel, path: serviceListPath },
+            { name: service.title, path: servicePath }
+          ])
+        ]}
+      />
       <PageHero eyebrow={eyebrow} title={service.title} description={service.excerpt} />
 
       <section className="section-space">

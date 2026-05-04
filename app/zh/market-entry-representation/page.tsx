@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
+import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
+import {
+  buildBreadcrumbSchema,
+  buildServiceGroupSchema,
+  buildWebPageSchema
+} from "@/lib/schema";
 
 export const metadata = buildMetadata({
   title: "市场进入与代表支持",
@@ -31,6 +37,34 @@ const relatedServices = [
 export default function ChineseMarketEntryRepresentationPage() {
   return (
     <>
+      <StructuredData
+        id="zh-market-entry-page-schema"
+        data={[
+          buildWebPageSchema({
+            type: "WebPage",
+            locale: "zh",
+            path: "/zh/market-entry-representation",
+            title: "市场进入与代表支持",
+            description: "围绕展会、商业代表与欧盟联络点建立更可信的欧洲初始市场存在。"
+          }),
+          buildServiceGroupSchema({
+            locale: "zh",
+            path: "/zh/market-entry-representation",
+            title: "市场进入与代表支持",
+            description: "围绕展会、商业代表与欧盟联络点建立更可信的欧洲初始市场存在。",
+            relatedServices: relatedServices.map((service) => ({
+              title: service.title,
+              href: service.href
+            }))
+          }),
+          buildBreadcrumbSchema([
+            { name: "首页", path: "/zh" },
+            { name: "服务", path: "/zh/services" },
+            { name: "市场进入与代表支持", path: "/zh/market-entry-representation" }
+          ])
+        ]}
+      />
+
       <PageHero
         eyebrow="服务支柱"
         title="市场进入与代表支持"
@@ -63,7 +97,9 @@ export default function ChineseMarketEntryRepresentationPage() {
           <div className="overflow-hidden rounded-[2rem] border border-line/10 bg-panel p-8 text-white shadow-glow">
             <div className="space-y-6">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">典型范围</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+                  典型范围
+                </p>
                 <p className="mt-3 text-lg leading-8 text-white/78">
                   具体组合取决于客户当前更关注展会、买家信任、本地首轮回复，还是更广义的商业界面建立。
                 </p>
@@ -97,7 +133,10 @@ export default function ChineseMarketEntryRepresentationPage() {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {relatedServices.map((service) => (
-              <article key={service.href} className="rounded-[1.9rem] border border-line/70 bg-white p-7 shadow-soft">
+              <article
+                key={service.href}
+                className="rounded-[1.9rem] border border-line/70 bg-white p-7 shadow-soft"
+              >
                 <h3 className="text-xl font-semibold tracking-[-0.03em] text-ink">{service.title}</h3>
                 <p className="mt-4 text-base leading-8 text-slate">{service.text}</p>
                 <Link

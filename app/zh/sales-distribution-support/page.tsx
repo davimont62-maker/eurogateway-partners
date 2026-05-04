@@ -13,5 +13,5 @@ export const metadata = buildMetadata({
 
 export default function ZhSalesDistributionSupportPage() {
   if (!service) return null;
-  return <ServicePage service={service} {...servicePageZh} />;
+  return <ServicePage service={service} locale="zh" path="/zh/sales-distribution-support" {...servicePageZh} />;
 }

@@ -2,7 +2,9 @@ import Link from "next/link";
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
 import { ServicePillarsSection } from "@/components/service-pillars-section";
+import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, serviceCatalogItems } from "@/lib/schema";
 import { services } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -15,6 +17,22 @@ export const metadata = buildMetadata({
 export default function ServicesPage() {
   return (
     <>
+      <StructuredData
+        id="services-page-schema"
+        data={[
+          buildCollectionPageSchema({
+            path: "/services",
+            title: "EuroLinq Services",
+            description:
+              "Explore EuroLinq's structured European market access support across representation, sales coordination, and operational continuity.",
+            items: serviceCatalogItems
+          }),
+          buildBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" }
+          ])
+        ]}
+      />
       <PageHero
         eyebrow="Services"
         title="Structured European support, organised around three core pillars."

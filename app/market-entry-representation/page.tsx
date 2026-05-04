@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
+import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
+import {
+  buildBreadcrumbSchema,
+  buildServiceGroupSchema,
+  buildWebPageSchema
+} from "@/lib/schema";
 
 export const metadata = buildMetadata({
   title: "Market Entry & Representation",
@@ -31,6 +37,32 @@ const relatedServices = [
 export default function MarketEntryRepresentationPage() {
   return (
     <>
+      <StructuredData
+        id="market-entry-page-schema"
+        data={[
+          buildWebPageSchema({
+            path: "/market-entry-representation",
+            title: "Market Entry & Representation",
+            description:
+              "A structured first European presence combining exhibition support, commercial representation, and a dependable local contact interface."
+          }),
+          buildServiceGroupSchema({
+            path: "/market-entry-representation",
+            title: "Market Entry & Representation",
+            description:
+              "A structured first European presence combining exhibition support, commercial representation, and a dependable local contact interface.",
+            relatedServices: relatedServices.map((service) => ({
+              title: service.title,
+              href: service.href
+            }))
+          }),
+          buildBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Market Entry & Representation", path: "/market-entry-representation" }
+          ])
+        ]}
+      />
       <PageHero
         eyebrow="Service pillar"
         title="Market Entry & Representation"

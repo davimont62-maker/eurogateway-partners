@@ -2,7 +2,9 @@ import Link from "next/link";
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
 import { ServicePillarsSection } from "@/components/service-pillars-section";
+import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from "@/lib/schema";
 import { servicePillarsZh, servicesListZh, servicesZh } from "@/lib/site-zh";
 
 export const metadata = buildMetadata({
@@ -15,6 +17,27 @@ export const metadata = buildMetadata({
 export default function ChineseServicesPage() {
   return (
     <>
+      <StructuredData
+        id="zh-services-page-schema"
+        data={[
+          buildCollectionPageSchema({
+            locale: "zh",
+            path: "/zh/services",
+            title: "EuroLinq 服务",
+            description:
+              "查看 EuroLinq 围绕欧洲市场进入、商业代表、销售协调与运营支持提供的结构化服务。",
+            items: servicesListZh.map((service) => ({
+              name: service.title,
+              path: `/zh/${service.slug}`
+            }))
+          }),
+          buildBreadcrumbSchema([
+            { name: "首页", path: "/zh" },
+            { name: "服务", path: "/zh/services" }
+          ])
+        ]}
+      />
+
       <PageHero eyebrow="服务" title={servicesZh.pageTitle} description={servicesZh.pageDescription} />
 
       <section className="border-b border-line/60 bg-white">
@@ -48,7 +71,9 @@ export default function ChineseServicesPage() {
                 {servicesZh.detailTitle}
               </h2>
             </div>
-            <p className="max-w-3xl text-base leading-8 text-slate">{servicesZh.detailDescription}</p>
+            <p className="max-w-3xl text-base leading-8 text-slate">
+              {servicesZh.detailDescription}
+            </p>
           </div>
           <div className="mt-12 space-y-6">
             {servicesListZh.map((service, index) => (
@@ -71,10 +96,17 @@ export default function ChineseServicesPage() {
           <div className="mt-12 rounded-[2rem] border border-line/10 bg-panel p-8 text-white shadow-glow">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">下一步</p>
-                <p className="mt-3 max-w-3xl text-2xl font-semibold tracking-tight">{servicesZh.mixTitle}</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+                  下一步
+                </p>
+                <p className="mt-3 max-w-3xl text-2xl font-semibold tracking-tight">
+                  {servicesZh.mixTitle}
+                </p>
               </div>
-              <Link href="/zh/contact" className="button-secondary border-white/20 bg-white/10 text-white hover:border-white/40">
+              <Link
+                href="/zh/contact"
+                className="button-secondary border-white/20 bg-white/10 text-white hover:border-white/40"
+              >
                 联系我们
               </Link>
             </div>

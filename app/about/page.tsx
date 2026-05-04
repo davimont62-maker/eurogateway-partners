@@ -1,6 +1,8 @@
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
+import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, buildWebPageSchema } from "@/lib/schema";
 import { aboutPoints } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -13,6 +15,22 @@ export const metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <>
+      <StructuredData
+        id="about-page-schema"
+        data={[
+          buildWebPageSchema({
+            type: "AboutPage",
+            path: "/about",
+            title: "About EuroLinq",
+            description:
+              "Learn how EuroLinq acts as a European extension of non-EU manufacturers entering and developing business in Europe."
+          }),
+          buildBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" }
+          ])
+        ]}
+      />
       <PageHero
         eyebrow="About"
         title="A European extension of the client company."

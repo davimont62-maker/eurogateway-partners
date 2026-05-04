@@ -3,12 +3,22 @@ import { Hero } from "@/components/hero";
 import { ProcessSection } from "@/components/process-section";
 import { SectionTitle } from "@/components/section-title";
 import { ServicePillarsSection } from "@/components/service-pillars-section";
+import { StructuredData } from "@/components/structured-data";
 import { TrustSection } from "@/components/trust-section";
+import { buildProfessionalServiceSchema } from "@/lib/schema";
 import { whoWeHelp } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <>
+      <StructuredData
+        id="home-professional-service-schema"
+        data={buildProfessionalServiceSchema({
+          path: "/",
+          description:
+            "EuroLinq helps non-EU manufacturers establish a trusted commercial presence in Europe through representation, coordination, and structured market-entry support."
+        })}
+      />
       <Hero />
       <ServicePillarsSection />
       <div className="border-y border-line/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(236,242,249,0.55)_52%,rgba(255,255,255,0.98))]">

@@ -1,7 +1,9 @@
 import { ContactForm } from "@/components/contact-form";
 import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
+import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, buildContactPageSchema } from "@/lib/schema";
 import { companyDetails } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -14,6 +16,21 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <>
+      <StructuredData
+        id="contact-page-schema"
+        data={[
+          buildContactPageSchema({
+            path: "/contact",
+            title: "Contact EuroLinq",
+            description:
+              "Contact EuroLinq to discuss a structured European market access and representation model for your business."
+          }),
+          buildBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" }
+          ])
+        ]}
+      />
       <PageHero
         eyebrow="Contact"
         title="Speak with us about your European market entry."
