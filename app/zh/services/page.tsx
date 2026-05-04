@@ -9,7 +9,7 @@ import { servicePillarsZh, servicesListZh, servicesZh } from "@/lib/site-zh";
 
 export const metadata = buildMetadata({
   title: "服务",
-  description: "查看 EuroLinq 在欧洲市场进入、商业代表、销售协调与运营支持方面的结构化服务。",
+  description: "查看 EuroLinq 围绕欧洲市场进入、欧洲代表支持、经销商沟通与运营协调提供的服务内容。",
   path: "/zh/services",
   locale: "zh"
 });
@@ -25,7 +25,7 @@ export default function ChineseServicesPage() {
             path: "/zh/services",
             title: "EuroLinq 服务",
             description:
-              "查看 EuroLinq 围绕欧洲市场进入、商业代表、销售协调与运营支持提供的结构化服务。",
+              "查看 EuroLinq 围绕欧洲市场进入、欧洲代表支持、经销商沟通与运营协调提供的服务内容。",
             items: servicesListZh.map((service) => ({
               name: service.title,
               path: `/zh/${service.slug}`
@@ -56,8 +56,8 @@ export default function ChineseServicesPage() {
 
       <ServicePillarsSection
         eyebrow="服务支柱"
-        title="围绕市场进入、代表支持与实际协调而构建的结构化支持模式。"
-        description="EuroLinq 并不是提供六项彼此分散的服务，而是围绕三个互补支柱来组织工作。"
+        title="围绕市场进入、代表支持和落地协调而构建的整体服务框架。"
+        description="EuroLinq 并不是提供几项彼此分散的单项服务，而是围绕三个互补支柱来组织工作。"
         pillars={servicePillarsZh}
         learnMoreLabel="了解更多"
       />
@@ -117,7 +117,7 @@ export default function ChineseServicesPage() {
       <CTASection
         eyebrow="下一步"
         title="讨论哪种服务组合更适合您的欧洲策略"
-        description="最合适的支持模式取决于您的目标市场、内部资源，以及计划投入的节奏。"
+        description="更合适的支持方式，取决于您的目标市场、内部资源以及投入节奏。"
         primaryLabel="联系我们"
         primaryHref="/zh/contact"
         secondaryLabel="返回首页"

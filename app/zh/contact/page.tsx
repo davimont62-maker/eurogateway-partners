@@ -9,7 +9,7 @@ import { contactFormZh, contactZh } from "@/lib/site-zh";
 
 export const metadata = buildMetadata({
   title: "联系我们",
-  description: "联系 EuroLinq，讨论适合您企业的欧洲市场进入与本地支持模式。",
+  description: "联系 EuroLinq，讨论适合您企业的欧洲市场进入支持方案与欧洲代表安排。",
   path: "/zh/contact",
   locale: "zh"
 });
@@ -24,7 +24,7 @@ export default function ChineseContactPage() {
             locale: "zh",
             path: "/zh/contact",
             title: "联系 EuroLinq",
-            description: "联系 EuroLinq，讨论适合您企业的欧洲市场进入与本地支持模式。"
+            description: "联系 EuroLinq，讨论适合您企业的欧洲市场进入支持方案与欧洲代表安排。"
           }),
           buildBreadcrumbSchema([
             { name: "首页", path: "/zh" },
@@ -47,7 +47,7 @@ export default function ChineseContactPage() {
                   <span className="font-semibold text-ink">Email:</span> {companyDetails.email}
                 </p>
                 <p>
-                  <span className="font-semibold text-ink">地址:</span> {companyDetails.registeredOffice}
+                  <span className="font-semibold text-ink">注册地址:</span> {companyDetails.registeredOffice}
                 </p>
               </div>
             </div>

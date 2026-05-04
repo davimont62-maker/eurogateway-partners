@@ -6,7 +6,7 @@ const service = getZhServiceBySlug("logistics-operational-coordination");
 
 export const metadata = buildMetadata({
   title: "物流与运营协调",
-  description: "围绕仓储、物流、退货与欧洲本地运营衔接提供实际协调支持。",
+  description: "围绕仓储、物流、退货和欧洲运营衔接提供实际协调支持。",
   path: "/zh/logistics-operational-coordination",
   locale: "zh"
 });

@@ -6,7 +6,7 @@ const service = getZhServiceBySlug("eu-commercial-representation");
 
 export const metadata = buildMetadata({
   title: "欧洲商业代表支持",
-  description: "建立更可信的欧洲商业界面，支持买家、经销商与合作方沟通。",
+  description: "建立更专业的欧洲本地商务窗口，支持买家、经销商和合作方沟通。",
   path: "/zh/eu-commercial-representation",
   locale: "zh"
 });
