@@ -9,7 +9,7 @@ import { servicePillarsZh, servicesListZh, servicesZh } from "@/lib/site-zh";
 
 export const metadata = buildMetadata({
   title: "服务",
-  description: "查看 EuroLinq 围绕欧洲市场进入、欧洲代表支持、经销商沟通与运营协调提供的服务内容。",
+  description: "查看 EuroLinq 围绕欧洲市场进入支持、欧洲代表服务、渠道开发与运营协调提供的服务内容。",
   path: "/zh/services",
   locale: "zh"
 });
@@ -25,7 +25,7 @@ export default function ChineseServicesPage() {
             path: "/zh/services",
             title: "EuroLinq 服务",
             description:
-              "查看 EuroLinq 围绕欧洲市场进入、欧洲代表支持、经销商沟通与运营协调提供的服务内容。",
+              "查看 EuroLinq 围绕欧洲市场进入支持、欧洲代表服务、渠道开发与运营协调提供的服务内容。",
             items: servicesListZh.map((service) => ({
               name: service.title,
               path: `/zh/${service.slug}`

@@ -7,7 +7,7 @@ import { aboutPointsZh, aboutZh } from "@/lib/site-zh";
 
 export const metadata = buildMetadata({
   title: "关于我们",
-  description: "了解 EuroLinq 如何作为非欧盟制造商进入欧洲市场过程中的欧洲延伸团队。",
+  description: "了解 EuroLinq 如何作为中国制造商进入欧洲市场过程中的欧洲延伸团队与执行伙伴。",
   path: "/zh/about",
   locale: "zh"
 });
@@ -23,7 +23,7 @@ export default function ChineseAboutPage() {
             locale: "zh",
             path: "/zh/about",
             title: "关于 EuroLinq",
-            description: "了解 EuroLinq 如何作为非欧盟制造商进入欧洲市场过程中的欧洲延伸团队。"
+            description: "了解 EuroLinq 如何作为中国制造商进入欧洲市场过程中的欧洲延伸团队与执行伙伴。"
           }),
           buildBreadcrumbSchema([
             { name: "首页", path: "/zh" },

@@ -24,7 +24,7 @@ const relatedServices = [
   },
   {
     href: "/zh/eu-commercial-representation",
-    title: "欧洲商业代表支持",
+    title: "欧洲代表服务",
     text: "为买家、经销商和合作方建立更专业的欧洲本地商务窗口。"
   },
   {
@@ -106,7 +106,7 @@ export default function ChineseMarketEntryRepresentationPage() {
               </div>
               <ul className="grid gap-3">
                 <li className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-base leading-7 text-white/82">
-                  欧洲展会支持与主办方沟通
+                  展会落地与主办方沟通
                 </li>
                 <li className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-base leading-7 text-white/82">
                   在适当情况下提供欧洲代表支持

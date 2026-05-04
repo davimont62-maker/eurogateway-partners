@@ -69,7 +69,7 @@ export default function ChineseContactPage() {
               ...contactFormZh,
               options: [
                 "展会代表支持",
-                "欧洲商业代表支持",
+                "欧洲代表服务",
                 "欧盟联络点 / 服务地址",
                 "销售与渠道支持",
                 "物流与运营协调",
