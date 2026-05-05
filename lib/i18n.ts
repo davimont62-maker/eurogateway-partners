@@ -33,5 +33,5 @@ export const navLabels = {
 
 export const taglines = {
   en: "Your European Market Access Partner",
-  zh: "您的欧洲市场准入合作伙伴"
+  zh: "您的欧洲市场进入合作伙伴"
 };

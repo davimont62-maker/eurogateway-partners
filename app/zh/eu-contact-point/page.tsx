@@ -5,8 +5,8 @@ import { getZhServiceBySlug, servicePageZh } from "@/lib/site-zh";
 const service = getZhServiceBySlug("eu-contact-point");
 
 export const metadata = buildMetadata({
-  title: "欧盟联络点 / 服务地址",
-  description: "提供欧洲联络点、前台支持和服务地址支持。",
+  title: service?.title ?? "欧盟联络点 / 服务地址",
+  description: service?.excerpt ?? "提供欧洲联络点、前台支持和服务地址支持。",
   path: "/zh/eu-contact-point",
   locale: "zh"
 });

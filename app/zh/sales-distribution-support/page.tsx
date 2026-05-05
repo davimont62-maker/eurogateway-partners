@@ -5,8 +5,8 @@ import { getZhServiceBySlug, servicePageZh } from "@/lib/site-zh";
 const service = getZhServiceBySlug("sales-distribution-support");
 
 export const metadata = buildMetadata({
-  title: "销售与渠道支持",
-  description: "围绕经销商沟通、询盘推进和销售协调提供欧洲市场进入支持。",
+  title: service?.title ?? "销售与渠道支持",
+  description: service?.excerpt ?? "围绕经销商沟通、询盘推进和报价跟进提供欧洲市场进入支持。",
   path: "/zh/sales-distribution-support",
   locale: "zh"
 });

@@ -46,6 +46,10 @@ export function ServicePage({
   const homePath = locale === "zh" ? "/zh" : "/";
   const homeLabel = locale === "zh" ? "首页" : "Home";
   const servicesLabel = locale === "zh" ? "服务" : "Services";
+  const supportParagraph =
+    locale === "zh"
+      ? "EuroLinq 会把这项工作放在更完整的欧洲市场进入方案中推进，确保本地沟通、客户跟进和后续执行彼此衔接，而不是各做各的。"
+      : "Eurolinq provides this support as part of a broader European market-access model: practical, structured, and aligned with the client's own commercial and investment approach.";
 
   return (
     <>
@@ -77,11 +81,7 @@ export function ServicePage({
           <div className="space-y-8">
             <div className="prose-copy space-y-6">
               <p>{service.intro}</p>
-              <p>
-                Eurolinq provides this support as part of a broader European market-access model:
-                practical, structured, and aligned with the client&apos;s own commercial and
-                investment approach.
-              </p>
+              <p>{supportParagraph}</p>
             </div>
 
             <div className="rounded-[2rem] border border-line/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,235,215,0.34))] p-7 shadow-soft">
@@ -93,7 +93,9 @@ export function ServicePage({
           <div className="overflow-hidden rounded-[2rem] border border-line/10 bg-panel p-8 text-white shadow-glow">
             <div className="space-y-6">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">{includedEyebrow}</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+                  {includedEyebrow}
+                </p>
                 <p className="mt-3 text-lg leading-8 text-white/78">{includedDescription}</p>
               </div>
               <ul className="grid gap-3">
@@ -114,7 +116,9 @@ export function ServicePage({
       <section className="section-tint">
         <div className="container-shell grid gap-16 py-16 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">{forWhoEyebrow}</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">
+              {forWhoEyebrow}
+            </p>
             <ul className="mt-5 grid gap-4">
               {service.forWho.map((item) => (
                 <li
@@ -127,7 +131,9 @@ export function ServicePage({
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">{howItWorksEyebrow}</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">
+              {howItWorksEyebrow}
+            </p>
             <ol className="mt-5 space-y-5">
               {service.howItWorks.map((item, index) => (
                 <li
@@ -136,10 +142,10 @@ export function ServicePage({
                 >
                   <div className="h-1.5 w-full bg-gradient-to-r from-accent via-panel to-gold" />
                   <div className="p-6">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">
-                    {stepLabel} {index + 1}
-                  </p>
-                  <p className="mt-2 text-base leading-8 text-slate">{item}</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">
+                      {stepLabel} {index + 1}
+                    </p>
+                    <p className="mt-2 text-base leading-8 text-slate">{item}</p>
                   </div>
                 </li>
               ))}

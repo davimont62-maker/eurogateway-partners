@@ -8,10 +8,13 @@ import { buildMetadata } from "@/lib/metadata";
 import { buildBreadcrumbSchema, buildCollectionPageSchema, buildFaqSchema } from "@/lib/schema";
 import { servicePillarsZh, servicesListZh, servicesSeoFaqsZh, servicesZh } from "@/lib/site-zh";
 
+const title = "欧洲市场进入服务";
+const description =
+  "查看 EuroLinq 围绕欧洲代表服务、经销商沟通、展会后跟进、物流协调与合规文件支持提供的服务内容。";
+
 export const metadata = buildMetadata({
-  title: "欧洲市场进入服务",
-  description:
-    "查看 EuroLinq 围绕欧洲代表服务、经销商沟通、展会后跟进、物流协调与合规文件支持提供的服务内容。",
+  title,
+  description,
   path: "/zh/services",
   locale: "zh"
 });
@@ -26,8 +29,7 @@ export default function ChineseServicesPage() {
             locale: "zh",
             path: "/zh/services",
             title: "EuroLinq 服务",
-            description:
-              "查看 EuroLinq 围绕欧洲代表服务、经销商沟通、展会后跟进、物流协调与合规文件支持提供的服务内容。",
+            description,
             items: servicesListZh.map((service) => ({
               name: service.title,
               path: `/zh/${service.slug}`
@@ -77,9 +79,7 @@ export default function ChineseServicesPage() {
                 {servicesZh.detailTitle}
               </h2>
             </div>
-            <p className="max-w-3xl text-base leading-8 text-slate">
-              {servicesZh.detailDescription}
-            </p>
+            <p className="max-w-3xl text-base leading-8 text-slate">{servicesZh.detailDescription}</p>
           </div>
           <div className="mt-12 space-y-6">
             {servicesListZh.map((service, index) => (

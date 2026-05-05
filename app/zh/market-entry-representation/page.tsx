@@ -9,12 +9,9 @@ import {
   buildWebPageSchema
 } from "@/lib/schema";
 
-export const metadata = buildMetadata({
-  title: "市场进入与代表支持",
-  description: "围绕展会支持、欧洲代表支持和欧盟联络点安排，帮助企业建立更专业的欧洲市场进入基础。",
-  path: "/zh/market-entry-representation",
-  locale: "zh"
-});
+const title = "市场进入与代表支持";
+const description =
+  "围绕展会支持、欧洲代表支持和欧盟联络点安排，帮助企业建立更专业的欧洲市场进入基础。";
 
 const relatedServices = [
   {
@@ -24,7 +21,7 @@ const relatedServices = [
   },
   {
     href: "/zh/eu-commercial-representation",
-    title: "欧洲代表服务",
+    title: "欧洲商业代表支持",
     text: "为买家、经销商和合作方建立更专业的欧洲本地商务窗口。"
   },
   {
@@ -33,6 +30,13 @@ const relatedServices = [
     text: "为询盘承接、前台沟通和日常联络提供可靠的欧洲窗口支持。"
   }
 ];
+
+export const metadata = buildMetadata({
+  title,
+  description,
+  path: "/zh/market-entry-representation",
+  locale: "zh"
+});
 
 export default function ChineseMarketEntryRepresentationPage() {
   return (
@@ -44,14 +48,14 @@ export default function ChineseMarketEntryRepresentationPage() {
             type: "WebPage",
             locale: "zh",
             path: "/zh/market-entry-representation",
-            title: "市场进入与代表支持",
-            description: "围绕展会支持、欧洲代表支持和欧盟联络点安排，帮助企业建立更专业的欧洲市场进入基础。"
+            title,
+            description
           }),
           buildServiceGroupSchema({
             locale: "zh",
             path: "/zh/market-entry-representation",
-            title: "市场进入与代表支持",
-            description: "围绕展会支持、欧洲代表支持和欧盟联络点安排，帮助企业建立更专业的欧洲市场进入基础。",
+            title,
+            description,
             relatedServices: relatedServices.map((service) => ({
               title: service.title,
               href: service.href
@@ -60,14 +64,14 @@ export default function ChineseMarketEntryRepresentationPage() {
           buildBreadcrumbSchema([
             { name: "首页", path: "/zh" },
             { name: "服务", path: "/zh/services" },
-            { name: "市场进入与代表支持", path: "/zh/market-entry-representation" }
+            { name: title, path: "/zh/market-entry-representation" }
           ])
         ]}
       />
 
       <PageHero
         eyebrow="服务支柱"
-        title="市场进入与代表支持"
+        title={title}
         description="为需要进入欧洲市场、但暂不准备重投入设立本地团队的制造商，提供务实的第一阶段支持。"
       />
 

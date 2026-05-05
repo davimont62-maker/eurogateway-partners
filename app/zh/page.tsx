@@ -25,10 +25,13 @@ import {
   whoWeHelpZh
 } from "@/lib/site-zh";
 
+const title = "欧洲市场进入支持与欧洲代表服务";
+const description =
+  "EuroLinq 为中国制造商和出口企业提供欧洲市场进入支持、欧洲代表服务、经销商沟通、展会后客户跟进以及本地执行协调。";
+
 export const metadata = buildMetadata({
-  title: "欧洲市场进入支持与欧洲代表服务",
-  description:
-    "EuroLinq 为中国制造商和出口企业提供欧洲市场进入支持、欧洲代表服务、经销商沟通、展会后客户跟进以及本地执行协调。",
+  title,
+  description,
   path: "/zh",
   locale: "zh"
 });
@@ -47,9 +50,8 @@ export default function ChineseHomePage() {
           buildWebPageSchema({
             locale: "zh",
             path: "/zh",
-            title: "欧洲市场进入支持与欧洲代表服务",
-            description:
-              "EuroLinq 为中国制造商和出口企业提供欧洲市场进入支持、欧洲代表服务、经销商沟通、展会后客户跟进以及本地执行协调。"
+            title,
+            description
           }),
           buildBreadcrumbSchema([{ name: "首页", path: "/zh" }]),
           buildFaqSchema({
@@ -80,7 +82,7 @@ export default function ChineseHomePage() {
       <ServicePillarsSection
         eyebrow="服务支柱"
         title="围绕市场进入、代表支持与实际协调而构建的结构化支持模式。"
-        description="EuroLinq 并不是提供六项彼此分散的服务，而是围绕三个互补支柱来组织工作。"
+        description="EuroLinq 并不是提供几项彼此分散的单项服务，而是围绕三个互补支柱来组织工作。"
         pillars={servicePillarsZh}
         learnMoreLabel="了解更多"
       />

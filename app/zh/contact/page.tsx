@@ -8,10 +8,13 @@ import { buildBreadcrumbSchema, buildContactPageSchema, buildFaqSchema } from "@
 import { companyDetails } from "@/lib/site";
 import { contactFormZh, contactSeoFaqsZh, contactZh } from "@/lib/site-zh";
 
+const title = "联系 EuroLinq";
+const description =
+  "联系 EuroLinq，讨论欧洲代表服务、经销商沟通、展会后客户跟进，以及适合您企业的欧洲市场进入执行方案。";
+
 export const metadata = buildMetadata({
-  title: "联系 EuroLinq",
-  description:
-    "联系 EuroLinq，讨论欧洲代表服务、经销商沟通、展会后客户跟进，以及适合您企业的欧洲市场进入执行方案。",
+  title,
+  description,
   path: "/zh/contact",
   locale: "zh"
 });
@@ -25,9 +28,8 @@ export default function ChineseContactPage() {
           buildContactPageSchema({
             locale: "zh",
             path: "/zh/contact",
-            title: "联系 EuroLinq",
-            description:
-              "联系 EuroLinq，讨论欧洲代表服务、经销商沟通、展会后客户跟进，以及适合您企业的欧洲市场进入执行方案。"
+            title,
+            description
           }),
           buildFaqSchema({
             path: "/zh/contact",
@@ -35,7 +37,7 @@ export default function ChineseContactPage() {
           }),
           buildBreadcrumbSchema([
             { name: "首页", path: "/zh" },
-            { name: "联系", path: "/zh/contact" }
+            { name: "联系我们", path: "/zh/contact" }
           ])
         ]}
       />
@@ -76,7 +78,7 @@ export default function ChineseContactPage() {
               ...contactFormZh,
               options: [
                 "展会代表支持",
-                "欧洲代表服务",
+                "欧洲商业代表支持",
                 "欧盟联络点 / 服务地址",
                 "销售与渠道支持",
                 "物流与运营协调",

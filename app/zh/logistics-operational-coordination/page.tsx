@@ -5,13 +5,20 @@ import { getZhServiceBySlug, servicePageZh } from "@/lib/site-zh";
 const service = getZhServiceBySlug("logistics-operational-coordination");
 
 export const metadata = buildMetadata({
-  title: "物流与运营协调",
-  description: "围绕仓储、物流、退货和欧洲运营衔接提供实际协调支持。",
+  title: service?.title ?? "物流与运营协调",
+  description: service?.excerpt ?? "围绕仓储、物流、退货和欧洲运营衔接提供实际协调支持。",
   path: "/zh/logistics-operational-coordination",
   locale: "zh"
 });
 
 export default function ZhLogisticsOperationalCoordinationPage() {
   if (!service) return null;
-  return <ServicePage service={service} locale="zh" path="/zh/logistics-operational-coordination" {...servicePageZh} />;
+  return (
+    <ServicePage
+      service={service}
+      locale="zh"
+      path="/zh/logistics-operational-coordination"
+      {...servicePageZh}
+    />
+  );
 }
