@@ -136,7 +136,7 @@ export function ContactForm({
             type="text"
             name="name"
             required
-            className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
+            className="mt-2 w-full rounded-2xl border border-white/20 bg-white px-4 py-3 text-base text-ink outline-none placeholder:text-slate/70 focus:border-gold focus:ring-2 focus:ring-gold/25"
             placeholder={labels.fullNamePlaceholder}
           />
         </label>
@@ -145,7 +145,7 @@ export function ContactForm({
           <input
             type="text"
             name="company"
-            className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
+            className="mt-2 w-full rounded-2xl border border-white/20 bg-white px-4 py-3 text-base text-ink outline-none placeholder:text-slate/70 focus:border-gold focus:ring-2 focus:ring-gold/25"
             placeholder={labels.companyPlaceholder}
           />
         </label>
@@ -158,7 +158,7 @@ export function ContactForm({
             type="email"
             name="email"
             required
-            className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
+            className="mt-2 w-full rounded-2xl border border-white/20 bg-white px-4 py-3 text-base text-ink outline-none placeholder:text-slate/70 focus:border-gold focus:ring-2 focus:ring-gold/25"
             placeholder={labels.emailPlaceholder}
           />
         </label>
@@ -167,7 +167,7 @@ export function ContactForm({
           <input
             type="tel"
             name="phone"
-            className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
+            className="mt-2 w-full rounded-2xl border border-white/20 bg-white px-4 py-3 text-base text-ink outline-none placeholder:text-slate/70 focus:border-gold focus:ring-2 focus:ring-gold/25"
             placeholder={labels.phonePlaceholder}
           />
         </label>
@@ -178,7 +178,7 @@ export function ContactForm({
         <select
           name="service"
           required
-          className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none focus:border-white/35"
+          className="mt-2 w-full rounded-2xl border border-white/20 bg-white px-4 py-3 text-base text-ink outline-none focus:border-gold focus:ring-2 focus:ring-gold/25"
           defaultValue=""
         >
           <option value="" disabled>
@@ -196,7 +196,7 @@ export function ContactForm({
           name="message"
           rows={6}
           required
-          className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
+          className="mt-2 w-full rounded-2xl border border-white/20 bg-white px-4 py-3 text-base text-ink outline-none placeholder:text-slate/70 focus:border-gold focus:ring-2 focus:ring-gold/25"
           placeholder={labels.enquiryPlaceholder}
         />
       </label>
