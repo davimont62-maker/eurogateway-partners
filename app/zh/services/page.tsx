@@ -10,7 +10,7 @@ import { servicePillarsZh, servicesListZh, servicesSeoFaqsZh, servicesZh } from 
 
 const title = "欧洲市场进入服务";
 const description =
-  "查看 EuroLinq 围绕欧洲代表服务、经销商沟通、展会后跟进、物流协调与合规文件支持提供的服务内容。";
+  "查看 EuroLinq 围绕欧洲代表服务、经销商沟通与报价、展会后客户跟进、物流协调以及合规文件支持提供的服务内容。";
 
 export const metadata = buildMetadata({
   title,
@@ -65,7 +65,7 @@ export default function ChineseServicesPage() {
       <ServicePillarsSection
         eyebrow="服务支柱"
         title="围绕市场进入、代表支持和落地协调而构建的整体服务框架。"
-        description="EuroLinq 并不是提供几项彼此分散的单项服务，而是围绕三个互补支柱来组织工作。"
+        description="EuroLinq 并不是提供几项彼此分散的单项服务，而是围绕三个互补支柱，在欧洲直接承接沟通、跟进与执行工作。"
         pillars={servicePillarsZh}
         learnMoreLabel="了解更多"
       />
@@ -123,14 +123,14 @@ export default function ChineseServicesPage() {
       <FAQSection
         eyebrow="常见问题"
         title="如何判断更适合您的欧洲支持组合？"
-        description="如果您正在比较欧洲代表服务、渠道推进和本地执行支持，下面这些问题通常最值得先明确。"
+        description="如果您正在比较欧洲代表服务、渠道推进和本地执行支持，下面这些问题通常最值得先明确，尤其是哪些工作需要在欧洲有人直接跟进和执行。"
         items={servicesSeoFaqsZh}
       />
 
       <CTASection
         eyebrow="下一步"
         title="讨论哪种服务组合更适合您的欧洲策略"
-        description="更合适的支持方式，取决于您的目标市场、内部资源以及投入节奏。"
+        description="更合适的支持方式，取决于您的目标市场、内部资源，以及哪些客户沟通、报价推进和本地执行工作需要有人在欧洲直接接手。"
         primaryLabel="联系我们"
         primaryHref="/zh/contact"
         secondaryLabel="返回首页"
