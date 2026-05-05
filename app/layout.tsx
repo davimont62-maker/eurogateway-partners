@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { StructuredData } from "@/components/structured-data";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -22,7 +23,7 @@ const manrope = Manrope({
 export const metadata: Metadata = buildMetadata({
   title: companyDetails.name,
   description:
-    "EuroLinq helps non-EU manufacturers establish a trusted commercial presence in Europe through representation, coordination, and market-entry support."
+    "EuroLinq helps Chinese manufacturers and non-EU exporters establish a trusted commercial presence in Europe through representation, coordination, and practical market-entry support."
 });
 
 export default function RootLayout({
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   );
