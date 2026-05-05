@@ -10,7 +10,6 @@ type ContactPayload = {
   service?: string;
   message?: string;
   website?: string;
-  turnstileToken?: string;
 };
 
 function clean(value: string | undefined) {
@@ -41,8 +40,7 @@ export async function POST(request: Request) {
       email: clean(body.email),
       phone: clean(body.phone),
       service: clean(body.service),
-      message: clean(body.message),
-      turnstileToken: clean(body.turnstileToken)
+      message: clean(body.message)
     };
 
     if (!payload.name || !payload.email || !payload.service || !payload.message) {
@@ -50,50 +48,6 @@ export async function POST(request: Request) {
         { ok: false, error: "Please complete the required form fields." },
         { status: 400 }
       );
-    }
-
-    if (process.env.TURNSTILE_SECRET_KEY) {
-      if (!payload.turnstileToken) {
-        return NextResponse.json(
-          { ok: false, error: "Please complete the verification check." },
-          { status: 400 }
-        );
-      }
-
-      const forwardedFor = request.headers.get("x-forwarded-for") ?? "";
-      const remoteIp = forwardedFor.split(",")[0]?.trim();
-      const verificationBody = new URLSearchParams({
-        secret: process.env.TURNSTILE_SECRET_KEY,
-        response: payload.turnstileToken
-      });
-
-      if (remoteIp) {
-        verificationBody.set("remoteip", remoteIp);
-      }
-
-      const verificationResponse = await fetch(
-        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          body: verificationBody.toString()
-        }
-      );
-
-      const verificationResult = (await verificationResponse.json()) as {
-        success?: boolean;
-        "error-codes"?: string[];
-      };
-
-      if (!verificationResult.success) {
-        console.error("Turnstile verification failed", verificationResult["error-codes"]);
-        return NextResponse.json(
-          { ok: false, error: "Verification failed. Please try again." },
-          { status: 400 }
-        );
-      }
     }
 
     const transport = nodemailer.createTransport({

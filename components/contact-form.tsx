@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 
 type ContactFormLabels = {
   eyebrow: string;
@@ -27,25 +27,6 @@ type ContactFormMessages = {
   success: string;
   error: string;
 };
-
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (
-        container: string | HTMLElement,
-        options: {
-          sitekey: string;
-          callback?: (token: string) => void;
-          "expired-callback"?: () => void;
-          "error-callback"?: () => void;
-          theme?: "light" | "dark" | "auto";
-        }
-      ) => string;
-      reset: (widgetId?: string) => void;
-      remove?: (widgetId?: string) => void;
-    };
-  }
-}
 
 const defaultLabels: ContactFormLabels = {
   eyebrow: "Enquiry form",
@@ -87,80 +68,12 @@ export function ContactForm({
   labels?: ContactFormLabels;
   messages?: ContactFormMessages;
 }) {
-  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-  const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
-  const turnstileWidgetIdRef = useRef<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
-  const [turnstileToken, setTurnstileToken] = useState("");
-
-  useEffect(() => {
-    if (!turnstileSiteKey || !turnstileContainerRef.current) {
-      return;
-    }
-
-    const siteKey = turnstileSiteKey;
-
-    function renderWidget() {
-      if (!window.turnstile || !turnstileContainerRef.current || turnstileWidgetIdRef.current) {
-        return;
-      }
-
-      turnstileWidgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
-        sitekey: siteKey,
-        theme: "light",
-        callback: (token) => {
-          setTurnstileToken(token);
-        },
-        "expired-callback": () => {
-          setTurnstileToken("");
-        },
-        "error-callback": () => {
-          setTurnstileToken("");
-        }
-      });
-    }
-
-    if (window.turnstile) {
-      renderWidget();
-      return;
-    }
-
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      'script[src^="https://challenges.cloudflare.com/turnstile/v0/api.js"]'
-    );
-
-    if (existingScript) {
-      existingScript.addEventListener("load", renderWidget);
-      return () => {
-        existingScript.removeEventListener("load", renderWidget);
-      };
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-    script.async = true;
-    script.defer = true;
-    script.addEventListener("load", renderWidget);
-    document.head.appendChild(script);
-
-    return () => {
-      script.removeEventListener("load", renderWidget);
-    };
-  }, [turnstileSiteKey]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus(null);
-
-    if (turnstileSiteKey && !turnstileToken) {
-      setStatus({
-        type: "error",
-        message: "Please complete the verification check before sending your enquiry."
-      });
-      return;
-    }
-
     setIsSubmitting(true);
 
     const form = event.currentTarget;
@@ -179,8 +92,7 @@ export function ContactForm({
           phone: String(formData.get("phone") ?? ""),
           service: String(formData.get("service") ?? ""),
           message: String(formData.get("message") ?? ""),
-          website: String(formData.get("website") ?? ""),
-          turnstileToken
+          website: String(formData.get("website") ?? "")
         })
       });
 
@@ -191,10 +103,6 @@ export function ContactForm({
       }
 
       form.reset();
-      setTurnstileToken("");
-      if (turnstileWidgetIdRef.current && window.turnstile) {
-        window.turnstile.reset(turnstileWidgetIdRef.current);
-      }
       setStatus({
         type: "success",
         message: messages.success
@@ -301,15 +209,6 @@ export function ContactForm({
         className="hidden"
         aria-hidden="true"
       />
-
-      {turnstileSiteKey ? (
-        <div className="space-y-3">
-          <div ref={turnstileContainerRef} className="min-h-[65px]" />
-          <p className="text-xs leading-6 text-white/65">
-            This form is protected by Cloudflare Turnstile to reduce spam enquiries.
-          </p>
-        </div>
-      ) : null}
 
       <div className="rounded-3xl border border-white/10 bg-white/8 p-5 text-sm leading-7 text-white/68">
         {labels.frontendNote}
