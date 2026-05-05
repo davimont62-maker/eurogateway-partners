@@ -1,3 +1,7 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
 type ContactFormLabels = {
   eyebrow: string;
   description: string;
@@ -18,6 +22,12 @@ type ContactFormLabels = {
   options: string[];
 };
 
+type ContactFormMessages = {
+  sending: string;
+  success: string;
+  error: string;
+};
+
 const defaultLabels: ContactFormLabels = {
   eyebrow: "Enquiry form",
   description: "Tell us about your market priorities and the kind of European support model you are considering.",
@@ -33,7 +43,7 @@ const defaultLabels: ContactFormLabels = {
   servicePlaceholder: "Select a service",
   enquiry: "Your enquiry",
   enquiryPlaceholder: "Tell us about your products, target market, and the support you are considering.",
-  frontendNote: "This form is frontend-only in the current build.",
+  frontendNote: "Enquiries are sent securely to our team inbox once mail delivery is configured.",
   submit: "Send enquiry",
   options: [
     "Exhibition Representation",
@@ -45,9 +55,73 @@ const defaultLabels: ContactFormLabels = {
   ]
 };
 
-export function ContactForm({ labels = defaultLabels }: { labels?: ContactFormLabels }) {
+const defaultMessages: ContactFormMessages = {
+  sending: "Sending...",
+  success: "Thank you. Your enquiry has been sent and we will respond as soon as possible.",
+  error: "We could not send your enquiry just now. Please try again or email us directly."
+};
+
+export function ContactForm({
+  labels = defaultLabels,
+  messages = defaultMessages
+}: {
+  labels?: ContactFormLabels;
+  messages?: ContactFormMessages;
+}) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus(null);
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: String(formData.get("name") ?? ""),
+          company: String(formData.get("company") ?? ""),
+          email: String(formData.get("email") ?? ""),
+          phone: String(formData.get("phone") ?? ""),
+          service: String(formData.get("service") ?? ""),
+          message: String(formData.get("message") ?? ""),
+          website: String(formData.get("website") ?? "")
+        })
+      });
+
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error ?? "Unable to send enquiry");
+      }
+
+      form.reset();
+      setStatus({
+        type: "success",
+        message: messages.success
+      });
+    } catch {
+      setStatus({
+        type: "error",
+        message: messages.error
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
-    <form className="grid gap-6 rounded-[2rem] border border-white/60 bg-[linear-gradient(160deg,rgba(16,40,70,0.98),rgba(29,76,152,0.92))] p-8 text-white shadow-glow">
+    <form
+      onSubmit={handleSubmit}
+      className="grid gap-6 rounded-[2rem] border border-white/60 bg-[linear-gradient(160deg,rgba(16,40,70,0.98),rgba(29,76,152,0.92))] p-8 text-white shadow-glow"
+    >
       <div className="space-y-2">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">{labels.eyebrow}</p>
         <p className="max-w-2xl text-base leading-7 text-white/75">
@@ -61,6 +135,7 @@ export function ContactForm({ labels = defaultLabels }: { labels?: ContactFormLa
           <input
             type="text"
             name="name"
+            required
             className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
             placeholder={labels.fullNamePlaceholder}
           />
@@ -82,6 +157,7 @@ export function ContactForm({ labels = defaultLabels }: { labels?: ContactFormLa
           <input
             type="email"
             name="email"
+            required
             className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
             placeholder={labels.emailPlaceholder}
           />
@@ -101,6 +177,7 @@ export function ContactForm({ labels = defaultLabels }: { labels?: ContactFormLa
         {labels.service}
         <select
           name="service"
+          required
           className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none focus:border-white/35"
           defaultValue=""
         >
@@ -118,21 +195,43 @@ export function ContactForm({ labels = defaultLabels }: { labels?: ContactFormLa
         <textarea
           name="message"
           rows={6}
+          required
           className="mt-2 w-full rounded-2xl border border-white/16 bg-white/8 px-4 py-3 text-base text-white outline-none placeholder:text-white/45 focus:border-white/35"
           placeholder={labels.enquiryPlaceholder}
         />
       </label>
 
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+
       <div className="rounded-3xl border border-white/10 bg-white/8 p-5 text-sm leading-7 text-white/68">
         {labels.frontendNote}
-        {/* Future backend integration can be connected here via CRM, email automation, or form handling endpoint. */}
       </div>
+
+      {status ? (
+        <div
+          className={`rounded-3xl border p-4 text-sm leading-7 ${
+            status.type === "success"
+              ? "border-emerald-300/30 bg-emerald-400/10 text-emerald-100"
+              : "border-rose-300/30 bg-rose-400/10 text-rose-100"
+          }`}
+        >
+          {status.message}
+        </div>
+      ) : null}
 
       <button
         type="submit"
+        disabled={isSubmitting}
         className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-ink hover:bg-goldSoft"
       >
-        {labels.submit}
+        {isSubmitting ? messages.sending : labels.submit}
       </button>
     </form>
   );
