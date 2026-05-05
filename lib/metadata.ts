@@ -4,18 +4,24 @@ import { companyDetails } from "@/lib/site";
 const siteUrl = `https://${companyDetails.domain}`;
 const sharedKeywords = [
   "European market access",
+  "European market entry services",
   "EU commercial representation",
   "European representation services",
   "European market entry support",
+  "European distributor communication support",
+  "European exhibition follow-up",
   "UK-based market access advisory",
-  "support for Chinese manufacturers in Europe"
+  "support for Chinese manufacturers in Europe",
+  "European contact point service"
 ];
 const sharedKeywordsZh = [
-  "欧洲市场准入",
-  "欧洲商业代表",
   "欧洲市场进入支持",
-  "英国市场准入顾问",
-  "中国制造商欧洲拓展"
+  "欧洲代表服务",
+  "欧洲本地商务窗口",
+  "经销商沟通与客户跟进",
+  "展会后客户跟进",
+  "合规与文件协调支持",
+  "中国制造商欧洲市场拓展"
 ];
 
 export function buildMetadata({

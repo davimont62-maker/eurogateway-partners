@@ -270,6 +270,29 @@ export function buildServiceGroupSchema({
   };
 }
 
+export function buildFaqSchema({
+  path,
+  items
+}: {
+  path: string;
+  items: Array<{ question: string; answer: string }>;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${absoluteUrl(path)}#faq`,
+    url: absoluteUrl(path),
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer
+      }
+    }))
+  };
+}
+
 export const serviceCatalogItems = services.map((service) => ({
   name: service.title,
   path: `/${service.slug}`

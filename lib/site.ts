@@ -275,6 +275,124 @@ export const whoWeHelp = [
   "Businesses needing EU presence without full setup"
 ];
 
+export const homeFaqs = [
+  {
+    question: "What does EuroLinq actually do for manufacturers entering Europe?",
+    answer:
+      "EuroLinq acts as a European market-access partner rather than a commission-led sales agent. We help manufacturers establish a credible local commercial presence, support distributor and buyer communication, coordinate exhibition follow-up, and assist with practical European-side execution."
+  },
+  {
+    question: "Is EuroLinq suitable if we do not want to set up a full European office yet?",
+    answer:
+      "Yes. Many clients use EuroLinq when they need a European-facing contact point, representation support, and local coordination before committing to a larger permanent setup."
+  },
+  {
+    question: "Can EuroLinq help after European trade fairs and exhibitions?",
+    answer:
+      "Yes. EuroLinq can support organiser liaison, exhibitor administration, post-event lead handling, buyer follow-up, and the communication continuity that is often missing after a trade fair."
+  },
+  {
+    question: "Do you support Chinese manufacturers entering Europe?",
+    answer:
+      "Yes. EuroLinq is particularly relevant for Chinese manufacturers and exporters that need a trusted European extension for market entry, distributor communication, and operational coordination."
+  }
+];
+
+export const homeSeoFaqs = [
+  {
+    question: "Can EuroLinq help us enter Europe without opening a full European office first?",
+    answer:
+      "Yes. Many manufacturers use EuroLinq when they need a European-facing commercial presence, local contact handling, and buyer or distributor follow-up before committing to a full in-market setup."
+  },
+  {
+    question: "Do you only provide advice, or do you also handle practical work in Europe?",
+    answer:
+      "EuroLinq supports practical European-side work as well as strategy. That can include exhibition follow-up, distributor communication, lead handling, first-response continuity, local contact-point support, and coordination with logistics or documentation partners."
+  },
+  {
+    question: "Is EuroLinq relevant for Chinese manufacturers developing Europe?",
+    answer:
+      "Yes. EuroLinq is especially relevant for Chinese manufacturers and exporters that need a trusted European extension to support market entry, distributor communication, buyer follow-up, and practical local execution."
+  },
+  {
+    question: "What outcomes does EuroLinq help clients achieve in Europe?",
+    answer:
+      "The goal is to help clients build a more credible European presence, respond more professionally to counterparties, keep opportunities moving after exhibitions or introductions, and coordinate the local work that often determines whether market entry actually progresses."
+  }
+];
+
+export const servicesFaqs = [
+  {
+    question: "How should we choose between the different EuroLinq services?",
+    answer:
+      "The right mix depends on your target market, route to market, and internal resources. Some businesses start with exhibition representation and buyer follow-up, while others need a broader European commercial interface or ongoing operational coordination."
+  },
+  {
+    question: "Can the services be combined as part of one market-entry model?",
+    answer:
+      "Yes. The services are designed to work together. EuroLinq can combine representation, distributor communication, logistics coordination, and documentation support into one practical European support model."
+  },
+  {
+    question: "Are the services only for early-stage market entry?",
+    answer:
+      "No. Some clients use EuroLinq at the testing stage, while others use the support model to strengthen ongoing European communication, channel development, and operational follow-through."
+  }
+];
+
+export const servicesSeoFaqs = [
+  {
+    question: "Which EuroLinq service is most useful at the start of European market entry?",
+    answer:
+      "That depends on the route to market. Some businesses begin with exhibition representation and follow-up, while others need European commercial representation or a local contact point first. The right starting point depends on your buyers, distributors, and internal capacity."
+  },
+  {
+    question: "Can EuroLinq combine representation, distributor communication, and operational coordination?",
+    answer:
+      "Yes. EuroLinq is designed to combine market-entry representation, distributor and buyer communication, and practical operational follow-through where clients need one joined-up European support model."
+  },
+  {
+    question: "Do your services include day-to-day European-side execution?",
+    answer:
+      "Yes. Depending on scope, EuroLinq can support enquiry handling, distributor follow-up, exhibition continuity, service-address coordination, and documentation-related communication with relevant counterparties."
+  }
+];
+
+export const contactFaqs = [
+  {
+    question: "What should we prepare before contacting EuroLinq?",
+    answer:
+      "It is helpful to know your product category, target European countries, preferred route to market, and whether you mainly need representation, distributor communication, exhibition follow-up, or operational coordination."
+  },
+  {
+    question: "Can we speak even if our European plan is still at an early stage?",
+    answer:
+      "Yes. Many discussions start before a company has fixed its final market-entry structure. EuroLinq can help define a staged support model that fits the current level of readiness."
+  },
+  {
+    question: "Do you only work with large companies?",
+    answer:
+      "No. EuroLinq can support both established manufacturers and smaller exporters that need a practical European extension without building a full local team from day one."
+  }
+];
+
+export const contactSeoFaqs = [
+  {
+    question: "What information should we send when contacting EuroLinq?",
+    answer:
+      "It is useful to share your product category, priority European countries, target customers or distributors, and whether you need representation, exhibition follow-up, buyer communication, or operational coordination."
+  },
+  {
+    question: "Can we contact EuroLinq before we have finalised our European plan?",
+    answer:
+      "Yes. Many companies start the conversation before they have fixed their exact market-entry model. EuroLinq can help define a staged support approach that fits the current level of readiness and investment."
+  },
+  {
+    question: "Can EuroLinq act as a European point of contact for our business?",
+    answer:
+      "Yes. Where appropriate, EuroLinq can help provide a more credible European-facing communication layer through local email, contact-point handling, and structured follow-up support."
+  }
+];
+
 export const aboutPoints = [
   "A European extension of the client company",
   "Not a commission-based sales intermediary",

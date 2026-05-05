@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { CTASection } from "@/components/cta-section";
+import { FAQSection } from "@/components/faq-section";
 import { PageHero } from "@/components/page-hero";
 import { ServicePillarsSection } from "@/components/service-pillars-section";
 import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
-import { buildBreadcrumbSchema, buildCollectionPageSchema, serviceCatalogItems } from "@/lib/schema";
-import { services } from "@/lib/site";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, buildFaqSchema, serviceCatalogItems } from "@/lib/schema";
+import { services, servicesSeoFaqs } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Services",
+  title: "European Market Entry Services",
   description:
-    "Explore Eurolinq's structured European market access support across representation, sales coordination, and operational continuity.",
+    "Explore EuroLinq's European market entry services, including commercial representation, distributor communication, exhibition follow-up, logistics coordination, and documentation support.",
   path: "/services"
 });
 
@@ -24,8 +25,12 @@ export default function ServicesPage() {
             path: "/services",
             title: "EuroLinq Services",
             description:
-              "Explore EuroLinq's structured European market access support across representation, sales coordination, and operational continuity.",
+              "Explore EuroLinq's European market entry services, including commercial representation, distributor communication, exhibition follow-up, logistics coordination, and documentation support.",
             items: serviceCatalogItems
+          }),
+          buildFaqSchema({
+            path: "/services",
+            items: servicesSeoFaqs
           }),
           buildBreadcrumbSchema([
             { name: "Home", path: "/" },
@@ -111,6 +116,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection
+        title="Questions about choosing the right European support model."
+        description="If you are comparing representation, channel-development, and coordination options, these are some of the practical questions we hear most often."
+        items={servicesSeoFaqs}
+      />
 
       <CTASection
         title="Discuss which combination of services fits your European strategy"

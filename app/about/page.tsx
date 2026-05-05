@@ -6,9 +6,9 @@ import { buildBreadcrumbSchema, buildWebPageSchema } from "@/lib/schema";
 import { aboutPoints } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "About",
+  title: "About EuroLinq",
   description:
-    "Learn how Eurolinq acts as a European extension of non-EU manufacturers entering and developing business in Europe.",
+    "Learn how EuroLinq acts as a European extension for Chinese manufacturers and non-EU exporters developing business in Europe.",
   path: "/about"
 });
 

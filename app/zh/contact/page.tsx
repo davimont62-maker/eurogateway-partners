@@ -1,15 +1,17 @@
 import { ContactForm } from "@/components/contact-form";
 import { CTASection } from "@/components/cta-section";
+import { FAQSection } from "@/components/faq-section";
 import { PageHero } from "@/components/page-hero";
 import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
-import { buildBreadcrumbSchema, buildContactPageSchema } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildContactPageSchema, buildFaqSchema } from "@/lib/schema";
 import { companyDetails } from "@/lib/site";
-import { contactFormZh, contactZh } from "@/lib/site-zh";
+import { contactFormZh, contactSeoFaqsZh, contactZh } from "@/lib/site-zh";
 
 export const metadata = buildMetadata({
-  title: "联系我们",
-  description: "联系 EuroLinq，讨论适合您企业的欧洲市场进入支持方案与欧洲代表安排。",
+  title: "联系 EuroLinq",
+  description:
+    "联系 EuroLinq，讨论欧洲代表服务、经销商沟通、展会后客户跟进，以及适合您企业的欧洲市场进入执行方案。",
   path: "/zh/contact",
   locale: "zh"
 });
@@ -24,7 +26,12 @@ export default function ChineseContactPage() {
             locale: "zh",
             path: "/zh/contact",
             title: "联系 EuroLinq",
-            description: "联系 EuroLinq，讨论适合您企业的欧洲市场进入支持方案与欧洲代表安排。"
+            description:
+              "联系 EuroLinq，讨论欧洲代表服务、经销商沟通、展会后客户跟进，以及适合您企业的欧洲市场进入执行方案。"
+          }),
+          buildFaqSchema({
+            path: "/zh/contact",
+            items: contactSeoFaqsZh
           }),
           buildBreadcrumbSchema([
             { name: "首页", path: "/zh" },
@@ -79,6 +86,13 @@ export default function ChineseContactPage() {
           />
         </div>
       </section>
+
+      <FAQSection
+        eyebrow="常见问题"
+        title="联系前，企业通常会先确认这些问题。"
+        description="如果您正在准备第一次沟通，下面这些问题通常最有助于快速判断双方是否适合合作。"
+        items={contactSeoFaqsZh}
+      />
 
       <CTASection
         eyebrow="下一步"

@@ -1,15 +1,16 @@
 import { ContactForm } from "@/components/contact-form";
 import { CTASection } from "@/components/cta-section";
+import { FAQSection } from "@/components/faq-section";
 import { PageHero } from "@/components/page-hero";
 import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
-import { buildBreadcrumbSchema, buildContactPageSchema } from "@/lib/schema";
-import { companyDetails } from "@/lib/site";
+import { buildBreadcrumbSchema, buildContactPageSchema, buildFaqSchema } from "@/lib/schema";
+import { companyDetails, contactSeoFaqs } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Contact",
+  title: "Contact EuroLinq",
   description:
-    "Contact Eurolinq to discuss a structured European market access and representation model for your business.",
+    "Contact EuroLinq to discuss European market entry, local representation, distributor communication, exhibition follow-up, and practical support for your business in Europe.",
   path: "/contact"
 });
 
@@ -23,7 +24,11 @@ export default function ContactPage() {
             path: "/contact",
             title: "Contact EuroLinq",
             description:
-              "Contact EuroLinq to discuss a structured European market access and representation model for your business."
+              "Contact EuroLinq to discuss European market entry, local representation, distributor communication, exhibition follow-up, and practical support for your business in Europe."
+          }),
+          buildFaqSchema({
+            path: "/contact",
+            items: contactSeoFaqs
           }),
           buildBreadcrumbSchema([
             { name: "Home", path: "/" },
@@ -67,6 +72,12 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </section>
+
+      <FAQSection
+        title="Questions before getting in touch."
+        description="If you are preparing for an initial discussion, these are some of the practical points businesses often want clarified first."
+        items={contactSeoFaqs}
+      />
 
       <CTASection
         title="If you prefer, start with a short introductory conversation"

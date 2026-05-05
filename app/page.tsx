@@ -1,3 +1,4 @@
+import { FAQSection } from "@/components/faq-section";
 import { CTASection } from "@/components/cta-section";
 import { Hero } from "@/components/hero";
 import { ProcessSection } from "@/components/process-section";
@@ -5,19 +6,45 @@ import { SectionTitle } from "@/components/section-title";
 import { ServicePillarsSection } from "@/components/service-pillars-section";
 import { StructuredData } from "@/components/structured-data";
 import { TrustSection } from "@/components/trust-section";
-import { buildProfessionalServiceSchema } from "@/lib/schema";
-import { whoWeHelp } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildProfessionalServiceSchema,
+  buildWebPageSchema
+} from "@/lib/schema";
+import { homeSeoFaqs, whoWeHelp } from "@/lib/site";
+
+export const metadata = buildMetadata({
+  title: "European Market Access Services for Chinese Manufacturers",
+  description:
+    "EuroLinq helps Chinese manufacturers and non-EU exporters enter Europe through local representation, distributor communication, exhibition follow-up, and practical European market-entry support.",
+  path: "/"
+});
 
 export default function HomePage() {
   return (
     <>
       <StructuredData
         id="home-professional-service-schema"
-        data={buildProfessionalServiceSchema({
-          path: "/",
-          description:
-            "EuroLinq helps non-EU manufacturers establish a trusted commercial presence in Europe through representation, coordination, and structured market-entry support."
-        })}
+        data={[
+          buildProfessionalServiceSchema({
+            path: "/",
+            description:
+              "EuroLinq helps Chinese manufacturers and non-EU exporters establish a trusted commercial presence in Europe through local representation, distributor communication, exhibition follow-up, and practical market-entry support."
+          }),
+          buildWebPageSchema({
+            path: "/",
+            title: "European Market Access Services for Chinese Manufacturers",
+            description:
+              "EuroLinq helps Chinese manufacturers and non-EU exporters enter Europe through local representation, distributor communication, exhibition follow-up, and practical European market-entry support."
+          }),
+          buildBreadcrumbSchema([{ name: "Home", path: "/" }]),
+          buildFaqSchema({
+            path: "/",
+            items: homeSeoFaqs
+          })
+        ]}
       />
       <Hero />
       <ServicePillarsSection />
@@ -42,6 +69,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <FAQSection
+        eyebrow="Frequently asked questions"
+        title="Questions manufacturers often ask before entering Europe."
+        description="These are common early-stage questions from Chinese manufacturers and other non-EU exporters evaluating European representation, distributor support, and local execution."
+        items={homeSeoFaqs}
+      />
 
       <CTASection
         title="Discuss your European market entry"

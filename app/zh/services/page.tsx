@@ -1,15 +1,17 @@
 import Link from "next/link";
 import { CTASection } from "@/components/cta-section";
+import { FAQSection } from "@/components/faq-section";
 import { PageHero } from "@/components/page-hero";
 import { ServicePillarsSection } from "@/components/service-pillars-section";
 import { StructuredData } from "@/components/structured-data";
 import { buildMetadata } from "@/lib/metadata";
-import { buildBreadcrumbSchema, buildCollectionPageSchema } from "@/lib/schema";
-import { servicePillarsZh, servicesListZh, servicesZh } from "@/lib/site-zh";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, buildFaqSchema } from "@/lib/schema";
+import { servicePillarsZh, servicesListZh, servicesSeoFaqsZh, servicesZh } from "@/lib/site-zh";
 
 export const metadata = buildMetadata({
-  title: "服务",
-  description: "查看 EuroLinq 围绕欧洲市场进入支持、欧洲代表服务、渠道开发与运营协调提供的服务内容。",
+  title: "欧洲市场进入服务",
+  description:
+    "查看 EuroLinq 围绕欧洲代表服务、经销商沟通、展会后跟进、物流协调与合规文件支持提供的服务内容。",
   path: "/zh/services",
   locale: "zh"
 });
@@ -25,11 +27,15 @@ export default function ChineseServicesPage() {
             path: "/zh/services",
             title: "EuroLinq 服务",
             description:
-              "查看 EuroLinq 围绕欧洲市场进入支持、欧洲代表服务、渠道开发与运营协调提供的服务内容。",
+              "查看 EuroLinq 围绕欧洲代表服务、经销商沟通、展会后跟进、物流协调与合规文件支持提供的服务内容。",
             items: servicesListZh.map((service) => ({
               name: service.title,
               path: `/zh/${service.slug}`
             }))
+          }),
+          buildFaqSchema({
+            path: "/zh/services",
+            items: servicesSeoFaqsZh
           }),
           buildBreadcrumbSchema([
             { name: "首页", path: "/zh" },
@@ -113,6 +119,13 @@ export default function ChineseServicesPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection
+        eyebrow="常见问题"
+        title="如何判断更适合您的欧洲支持组合？"
+        description="如果您正在比较欧洲代表服务、渠道推进和本地执行支持，下面这些问题通常最值得先明确。"
+        items={servicesSeoFaqsZh}
+      />
 
       <CTASection
         eyebrow="下一步"
