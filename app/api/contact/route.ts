@@ -62,13 +62,21 @@ export async function POST(request: Request) {
 
     const recipient = process.env.CONTACT_TO_EMAIL ?? companyDetails.email;
     const fromAddress = process.env.SMTP_FROM ?? process.env.SMTP_USER ?? companyDetails.email;
+    const fromName = "EuroLinq Website";
 
     await transport.sendMail({
       to: recipient,
-      from: fromAddress,
+      from: `${fromName} <${fromAddress}>`,
+      sender: fromAddress,
       replyTo: payload.email,
-      subject: `New EuroLinq enquiry: ${payload.service}`,
+      subject: `Website enquiry from ${payload.name} | ${payload.service}`,
+      headers: {
+        "X-Auto-Response-Suppress": "All",
+        "X-Entity-Ref-ID": `${Date.now()}-${payload.email}`
+      },
       text: [
+        "New website enquiry received via eurolinq-partners.com",
+        "",
         `Name: ${payload.name}`,
         `Company: ${payload.company || "-"}`,
         `Email: ${payload.email}`,
@@ -79,7 +87,8 @@ export async function POST(request: Request) {
         payload.message
       ].join("\n"),
       html: `
-        <h2>New EuroLinq enquiry</h2>
+        <h2>New website enquiry</h2>
+        <p>This message was submitted through the EuroLinq website contact form.</p>
         <p><strong>Name:</strong> ${payload.name}</p>
         <p><strong>Company:</strong> ${payload.company || "-"}</p>
         <p><strong>Email:</strong> ${payload.email}</p>
