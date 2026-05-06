@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import { ChatWidget } from "@/components/chat-widget";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { StructuredData } from "@/components/structured-data";
 import { Footer } from "@/components/footer";
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ChatWidget />
         <GoogleAnalytics />
       </body>
     </html>
