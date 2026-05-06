@@ -16,9 +16,9 @@ function normaliseWhatsAppNumber(value: string) {
 
 const widgetCopy = {
   en: {
-    launcher: "Chat with us",
-    eyebrow: "Quick contact",
-    title: "Speak with EuroLinq",
+    launcher: "WhatsApp / WeChat",
+    eyebrow: "Direct contact",
+    title: "Contact EuroLinq",
     intro:
       "Choose the channel that suits you best. You can message us on WhatsApp, add us on WeChat, or use the contact form for a fuller enquiry.",
     whatsappLabel: "Chat on WhatsApp",
@@ -30,8 +30,8 @@ const widgetCopy = {
     note: "We use WhatsApp and WeChat for quick contact, and email for fuller business follow-up."
   },
   zh: {
-    launcher: "联系咨询",
-    eyebrow: "快速联系",
+    launcher: "WhatsApp / 微信",
+    eyebrow: "直接联系",
     title: "联系 EuroLinq",
     intro:
       "请选择您方便的沟通方式。您可以通过 WhatsApp 联系我们、添加微信，或使用联系表单提交更完整的业务咨询。",
